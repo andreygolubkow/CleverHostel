@@ -131,6 +131,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataBase\DocumentContext.cs" />
+    <Compile Include="DataBase\GroupContext.cs" />
     <Compile Include="DataBase\StudentContext.cs" />
     <Compile Include="Model\Documents\IDocument.cs" />
     <Compile Include="Model\Documents\OtherDocument.cs" />
