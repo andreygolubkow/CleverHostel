@@ -6,6 +6,10 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
+using System.Collections.Generic;
+
+using Core.Model.Documents;
+
 namespace Core.Model.Student
 {
     using System;
@@ -22,6 +26,11 @@ namespace Core.Model.Student
         private int _groupId;
 
         private int _room;
+
+        public Student()
+        {
+            Documents = new List<IDocument>();
+        }
 
         /// <summary>
         /// Уникальный идентификатор студента.
@@ -84,21 +93,25 @@ namespace Core.Model.Student
         public Sex Sex { get; set; }
 
         /// <summary>
-        /// Идентификатор группы.
+        /// Группа группы.
         /// </summary>
-        public int GroupId
+        public Group Group { get; set; }
+
+        /// <summary>
+        /// Список документов для студента.
+        /// </summary>
+        public List<IDocument> Documents { get; set; }
+
+        public int Points
         {
             get
             {
-                return _groupId;
-            }
-            set
-            {
-                if ( value < 0 )
+                int startPoints = 0;
+                foreach (var document in Documents)
                 {
-                    throw new ArgumentException("Идентификатор группы не может быть меньше 0.");
+                    startPoints += document.Points;
                 }
-                _groupId = value;
+                return startPoints;
             }
         }
     }

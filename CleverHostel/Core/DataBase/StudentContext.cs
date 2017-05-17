@@ -1,22 +1,16 @@
 ﻿namespace Core.DataBase
 {
-    using System;
-    using System.Data.Entity;
-
-    using Core.Model.Student;
+    using Microsoft.EntityFrameworkCore;
+    using Model.Student;
 
     public class StudentContext : DbContext
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="StudentContext"/> class.
-        /// </summary>
-        public StudentContext()
-            : base("DbConnection")
+        public DbSet<Student> Students { get; set; }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            
+            optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=hostelData;Trusted_Connection=True;");
         }
 
-        public DbSet<Student> Students { get; set; }
-        
     }
 }
