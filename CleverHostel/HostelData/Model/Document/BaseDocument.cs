@@ -1,0 +1,40 @@
+﻿// //CleverHostel->HostelData->IDocument.cs
+// //andreygolubkow Андрей Голубков
+
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Runtime.Serialization;
+
+namespace HostelData.Model.Document
+{
+    /// <summary>
+    /// Интерфейс документа.
+    /// </summary>
+    public class BaseDocument
+    {
+
+        /// <summary>
+        /// Уникальный идентификатор документа.
+        /// </summary>
+        public int Id { get; set; }
+
+        /// <summary>
+        /// Дата документа.
+        /// </summary>
+        public DateTime DocumentDate { get; set; }
+
+        /// <summary>
+        /// Очки начисляемые или снимаемые.
+        /// </summary>
+        public int Points { get; set; }
+
+        /// <summary>
+        /// Комментарии к документу.
+        /// </summary>
+        public string Comments { get; set; }
+
+
+        public virtual List<Student.Student> Students { get; set; }
+    }
+}
