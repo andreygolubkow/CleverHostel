@@ -6,6 +6,8 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Runtime.Serialization;
 
+using HostelData.Model.Student;
+
 namespace HostelData.Model.Document
 {
     /// <summary>
@@ -34,6 +36,10 @@ namespace HostelData.Model.Document
         /// </summary>
         public string Comments { get; set; }
 
+        /// <summary>
+        /// Заявитель
+        /// </summary>
+        public Applicant Applicant { get; set; }
 
         public virtual List<Student.Student> Students { get; set; }
     }

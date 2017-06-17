@@ -64,6 +64,8 @@
     <Compile Include="Model\Document\OtherDocument.cs" />
     <Compile Include="Model\Document\PromotionDocument.cs" />
     <Compile Include="Model\Document\PunishmentDocument.cs" />
+    <Compile Include="Model\Student\Applicant.cs" />
+    <Compile Include="Model\Student\Department.cs" />
     <Compile Include="Model\Student\Group.cs" />
     <Compile Include="Model\Enums\Sex.cs" />
     <Compile Include="Model\Student\Student.cs" />

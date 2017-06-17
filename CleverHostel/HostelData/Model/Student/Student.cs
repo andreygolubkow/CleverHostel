@@ -90,6 +90,11 @@ namespace HostelData.Model.Student
         public Sex Sex { get; set; }
 
         /// <summary>
+        /// Номер телефона.
+        /// </summary>
+        public string PhoneNumber { get; set; }
+
+        /// <summary>
         /// Группа группы.
         /// </summary>
         public Group Group { get; set; }

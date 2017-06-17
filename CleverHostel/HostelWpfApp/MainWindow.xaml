@@ -1,0 +1,65 @@
+﻿<Window x:Name="MainWindow1" x:Class="HostelWpfApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HostelWpfApp"
+        mc:Ignorable="d"
+        Title="Hostel Rating IS" Height="587" Width="525">
+    <DockPanel  x:Name="MainDockPanel" LastChildFill="True">
+        <Menu x:Name="MainMenu" DockPanel.Dock="Top" Height="25" VerticalAlignment="Top">
+            <MenuItem Header="База">
+                <MenuItem Header="Заявители"/>
+                <MenuItem Header="Группы"/>
+                <MenuItem Header="Подразделения"/>
+                <Separator/>
+                <MenuItem Header="Обновить базу"/>
+                <MenuItem Header="Импорт">
+                    <MenuItem Header="Импорт студентов"/>
+                </MenuItem>
+                <Separator/>
+                <MenuItem Header="Выход"/>
+            </MenuItem>
+            <MenuItem Header="Студенты">
+                <MenuItem Header="Добавить студента"/>
+                <MenuItem Header="Изменить студента"/>
+                <MenuItem Header="Удалить студента"/>
+            </MenuItem>
+            <MenuItem Header="Документы">
+                <MenuItem Header="Просмотреть документы"/>
+                <Separator/>
+                <MenuItem Header="Создать взыскание"/>
+                <MenuItem Header="Создать поощрение"/>
+                <MenuItem Header="Создать другой документ"/>
+            </MenuItem>
+            <MenuItem Header="Настройки">
+                <MenuItem Header="Шаблоны">
+                    <MenuItem Header="Взыскания"/>
+                    <MenuItem Header="Поощрения"/>
+                </MenuItem>
+                <MenuItem Header="Соединения с данными"/>
+                <MenuItem Header="Резервное копирование"/>
+            </MenuItem>
+        </Menu>
+        <GroupBox DockPanel.Dock="Top"
+                  x:Name="StudentSelectorGroupBox"
+                  Padding="10"
+                  Header="Выбор студента">
+            <ComboBox x:Name="StudentComboBox"/>
+        </GroupBox>
+        <GroupBox x:Name="StudentGridViewGroupBox"
+                  Padding="10"
+                  Header="Список студентов">
+            <DataGrid AutoGenerateColumns="False" x:Name="studentsGridView" CanUserResizeRows="False" ColumnWidth="Auto">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding Name}" Header="ФИО"/>
+                    <DataGridTextColumn Binding="{Binding Room}" Header="Комната" />
+                    <DataGridTextColumn Binding="{Binding Group.Course}" Header="Курс"/>
+                    <DataGridTextColumn Binding="{Binding Group.Faculty}" Header="Факультет"/>
+                    <DataGridTextColumn Binding="{Binding Points}" Header="Баллы"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </GroupBox>
+    </DockPanel>
+
+</Window>
