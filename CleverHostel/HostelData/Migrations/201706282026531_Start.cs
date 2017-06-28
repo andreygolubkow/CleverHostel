@@ -3,10 +3,31 @@ namespace HostelData.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class StartMigration : DbMigration
+    public partial class Start : DbMigration
     {
         public override void Up()
         {
+            CreateTable(
+                "dbo.Applicants",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        Name = c.String(),
+                        Department_Id = c.Int(),
+                    })
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.Departments", t => t.Department_Id)
+                .Index(t => t.Department_Id);
+            
+            CreateTable(
+                "dbo.Departments",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        Name = c.String(),
+                    })
+                .PrimaryKey(t => t.Id);
+            
             CreateTable(
                 "dbo.BaseDocuments",
                 c => new
@@ -18,8 +39,11 @@ namespace HostelData.Migrations
                         Name = c.String(),
                         Verdict = c.Int(),
                         Discriminator = c.String(nullable: false, maxLength: 128),
+                        Applicant_Id = c.Int(),
                     })
-                .PrimaryKey(t => t.Id);
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.Applicants", t => t.Applicant_Id)
+                .Index(t => t.Applicant_Id);
             
             CreateTable(
                 "dbo.Students",
@@ -29,14 +53,15 @@ namespace HostelData.Migrations
                         Room = c.Int(nullable: false),
                         Name = c.String(nullable: false),
                         Sex = c.Int(nullable: false),
+                        PhoneNumber = c.String(),
                         Group_Id = c.Int(),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Groups", t => t.Group_Id)
+                .ForeignKey("dbo.StudentGroups", t => t.Group_Id)
                 .Index(t => t.Group_Id);
             
             CreateTable(
-                "dbo.Groups",
+                "dbo.StudentGroups",
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
@@ -62,16 +87,22 @@ namespace HostelData.Migrations
         
         public override void Down()
         {
-            DropForeignKey("dbo.Students", "Group_Id", "dbo.Groups");
+            DropForeignKey("dbo.Students", "Group_Id", "dbo.StudentGroups");
             DropForeignKey("dbo.StudentBaseDocuments", "BaseDocument_Id", "dbo.BaseDocuments");
             DropForeignKey("dbo.StudentBaseDocuments", "Student_Id", "dbo.Students");
+            DropForeignKey("dbo.BaseDocuments", "Applicant_Id", "dbo.Applicants");
+            DropForeignKey("dbo.Applicants", "Department_Id", "dbo.Departments");
             DropIndex("dbo.StudentBaseDocuments", new[] { "BaseDocument_Id" });
             DropIndex("dbo.StudentBaseDocuments", new[] { "Student_Id" });
             DropIndex("dbo.Students", new[] { "Group_Id" });
+            DropIndex("dbo.BaseDocuments", new[] { "Applicant_Id" });
+            DropIndex("dbo.Applicants", new[] { "Department_Id" });
             DropTable("dbo.StudentBaseDocuments");
-            DropTable("dbo.Groups");
+            DropTable("dbo.StudentGroups");
             DropTable("dbo.Students");
             DropTable("dbo.BaseDocuments");
+            DropTable("dbo.Departments");
+            DropTable("dbo.Applicants");
         }
     }
 }

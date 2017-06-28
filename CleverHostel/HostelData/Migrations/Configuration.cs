@@ -1,3 +1,7 @@
+using HostelData.Model.Document;
+using HostelData.Model.Enums;
+using HostelData.Model.Student;
+
 namespace HostelData.Migrations
 {
     using System;

@@ -8,8 +8,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace HostelData.Model.Student
 {
-    [Table("Groups")]
-    public class Group
+    [Table("StudentGroups")]
+    public sealed class Group
     {
 
         /// <summary>
@@ -28,7 +28,7 @@ namespace HostelData.Model.Student
         /// </summary>
         public string Faculty { get; set; }
 
-        public virtual ICollection<Student> Students { get; set; }
+        public ICollection<Student> Students { get; set; }
 
         /// <summary>
         /// Курс, вычисляется автоматически.

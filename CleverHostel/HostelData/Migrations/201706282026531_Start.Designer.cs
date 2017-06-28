@@ -7,13 +7,13 @@ namespace HostelData.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class StartMigration : IMigrationMetadata
+    public sealed partial class Start : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(StartMigration));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Start));
         
         string IMigrationMetadata.Id
         {
-            get { return "201706171236300_StartMigration"; }
+            get { return "201706282026531_Start"; }
         }
         
         string IMigrationMetadata.Source

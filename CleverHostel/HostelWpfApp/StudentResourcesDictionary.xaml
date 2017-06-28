@@ -1,0 +1,27 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:HostelWpfApp">
+    <DataTemplate x:Key="StudentCardTemplate">
+        <Border Margin="5" BorderThickness="1" BorderBrush="SteelBlue" CornerRadius="4" HorizontalAlignment="Stretch">
+            <Grid Margin="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="1" Margin="2,6">
+                    <TextBlock FontWeight="Bold" Text="{Binding Path=Name}"/>
+                    <TextBlock Text="{Binding Path=Group.Faculty}"/>
+                    <TextBlock>
+                            <TextBlock Text="Курс:"/>
+                            <TextBlock Text="{Binding Path=Group.Course}"/>
+                    </TextBlock>
+                    <TextBlock>
+                        <TextBlock Text="Группа:"/>
+                        <TextBlock Text="{Binding Path=Group.Num}"/>
+                    </TextBlock>
+                    <TextBlock FontStyle="Italic" HorizontalAlignment="Right" Text="{Binding Path=Room}"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+    </DataTemplate>
+</ResourceDictionary>

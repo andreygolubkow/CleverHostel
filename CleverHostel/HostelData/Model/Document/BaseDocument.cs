@@ -16,6 +16,10 @@ namespace HostelData.Model.Document
     public class BaseDocument
     {
 
+        protected BaseDocument()
+        {
+        }
+
         /// <summary>
         /// Уникальный идентификатор документа.
         /// </summary>
@@ -29,7 +33,7 @@ namespace HostelData.Model.Document
         /// <summary>
         /// Очки начисляемые или снимаемые.
         /// </summary>
-        public int Points { get; set; }
+        public virtual int Points { get; set; }
 
         /// <summary>
         /// Комментарии к документу.

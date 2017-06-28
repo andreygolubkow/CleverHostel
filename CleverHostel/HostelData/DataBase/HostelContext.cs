@@ -12,7 +12,11 @@ namespace HostelData.DataBase
     {
         public DbSet<Group> Groups { get; set; }
 
+        public DbSet<Department> Departments { get; set; }
+
         public DbSet<Student> Students { get; set; }
+        
+        public DbSet<Applicant> Applicants { get; set; }
 
         public DbSet<BaseDocument> Documents { get; set; }
 
