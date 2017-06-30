@@ -18,23 +18,24 @@ namespace HostelWpfApp
     /// </summary>
     public partial class MainWindow : Window
     {
+        private HostelContext _dataBase;
+
         public MainWindow()
         {
             InitializeComponent();
+            _dataBase = new HostelContext();
             LoadData();
         }
 
         private void LoadData()
         { 
+            //InitialData(_dataBase);
 
-            using (var db = new HostelContext())
-            {
+            _dataBase.Students.Include(s=>s.Group).Include(s=>s.Documents).Load();
 
-                InitialData(db);
-                db.Students.Include(s=>s.Group).Include(s=>s.Documents).Load();
-
-                studentsGridView.ItemsSource = db.Students.Local.ToBindingList();
-            }        
+            studentsGridView.ItemsSource = _dataBase.Students.Local.ToBindingList();
+           
+            
         }
 
         protected void InitialData(HostelContext context)

@@ -59,13 +59,19 @@
         <GroupBox x:Name="StudentGridViewGroupBox"
                   Padding="10"
                   Header="Список студентов">
-            <DataGrid AutoGenerateColumns="False" x:Name="studentsGridView" CanUserResizeRows="False" ColumnWidth="Auto">
+            <DataGrid AutoGenerateColumns="False" 
+                      x:Name="studentsGridView" 
+                      CanUserResizeRows="False" 
+                      ColumnWidth="Auto"
+                      CanUserAddRows="False"
+                      CanUserDeleteRows="False"
+                      SelectedItem="{Binding ElementName = StudentComboBox, Path = SelectedItem, Mode = TwoWay}">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Binding="{Binding Path=Name}" Header="ФИО"/>
-                    <DataGridTextColumn Binding="{Binding Path=Room}" Header="Комната" />
-                    <DataGridTextColumn Binding="{Binding Path=Group.Faculty}" Header="Курс"/>
-                    <DataGridTextColumn Binding="{Binding Path=Group.Course}" Header="Факультет"/>
-                    <DataGridTextColumn Binding="{Binding Path=Points}" Header="Баллы"/>
+                    <DataGridTextColumn Binding="{Binding Path=Name, Mode = OneWay}" Header="ФИО"/>
+                    <DataGridTextColumn Binding="{Binding Path=Room, Mode = OneWay}" Header="Комната" />
+                    <DataGridTextColumn Binding="{Binding Path=Group.Faculty, Mode = OneWay}" Header="Курс"/>
+                    <DataGridTextColumn Binding="{Binding Path=Group.Course, Mode = OneWay}" Header="Факультет"/>
+                    <DataGridTextColumn Binding="{Binding Path=Points, Mode = OneWay}" Header="Баллы"/>
                 </DataGrid.Columns>
             </DataGrid>
         </GroupBox>
