@@ -12,10 +12,21 @@ namespace HostelData.Model.Document
     /// </summary>
     public class OtherDocument : BaseDocument
     {
+        private int _points;
+
         #region Overrides of BaseDocument
 
         /// <inheritdoc />
-        public override int Points { get; set; }
+        public override int Points
+        {
+            get => _points;
+
+            set
+            {
+                _points = value;
+                OnPropertyChanged(nameof(Points));
+            }
+        }
 
         #endregion
     }

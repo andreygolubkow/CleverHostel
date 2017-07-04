@@ -14,11 +14,23 @@ namespace HostelData.Model.Document
     {
 
         private int _points;
+        private string _name;
 
         /// <summary>
         /// Название поощрения.
         /// </summary>
-        public string Name { get; set; }
+        public string Name
+        {
+            get
+            {
+                return _name;
+            }
+            set
+            {
+                _name = value;
+                OnPropertyChanged(nameof(Name));
+            }
+        }
 
         #region Implementation of Base
 
@@ -36,6 +48,7 @@ namespace HostelData.Model.Document
                     throw new ArgumentException("Нельзя присвоить отрицательные баллы. Воспользуйтесь другим документом.");
                 }
                 _points = value;
+                OnPropertyChanged(nameof(Points));
             }
         }
 

@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Runtime.CompilerServices;
 
+using HostelData.Annotations;
 using HostelData.Model.Document;
 using HostelData.Model.Enums;
 
@@ -12,7 +15,7 @@ namespace HostelData.Model.Student
     /// Студент.
     /// </summary>
     [Table("Students")]
-    public class Student
+    public class Student: INotifyPropertyChanged
     {
         private int _id;
 
@@ -21,6 +24,12 @@ namespace HostelData.Model.Student
         private int _groupId;
 
         private int _room;
+        private Sex _sex;
+        private string _phoneNumber;
+        private Group _group;
+        private ICollection<BaseDocument> _documents;
+
+        public event PropertyChangedEventHandler PropertyChanged;
 
         public Student()
         {
@@ -45,6 +54,7 @@ namespace HostelData.Model.Student
                     throw new ArgumentException("Идентификатор должен быть >0");
                 }
                 _id = value;
+                OnPropertyChanged(nameof(Id));
             }
         }
 
@@ -61,6 +71,7 @@ namespace HostelData.Model.Student
                     throw new ArgumentException("Комната не может быть отрицательной.");
                 }
                 _room = value;
+                OnPropertyChanged(nameof(Room));
             }
         }
 
@@ -81,28 +92,74 @@ namespace HostelData.Model.Student
                     throw new ArgumentException("Нельзя сделать имя пустым.");
                 }
                 _name = value;
+                OnPropertyChanged(nameof(Name));
             }
         }
 
         /// <summary>
         /// Пол студента.
         /// </summary>
-        public Sex Sex { get; set; }
+        public Sex Sex
+        {
+            get
+            {
+                return _sex;
+            }
+            set
+            {
+                _sex = value;
+                OnPropertyChanged(nameof(Sex));
+            }
+        }
 
         /// <summary>
         /// Номер телефона.
         /// </summary>
-        public string PhoneNumber { get; set; }
+        public string PhoneNumber
+        {
+            get
+            {
+                return _phoneNumber;
+            }
+            set
+            {
+                _phoneNumber = value;
+                OnPropertyChanged(nameof(PhoneNumber));
+            }
+        }
 
         /// <summary>
         /// Группа группы.
         /// </summary>
-        public Group Group { get; set; }
+        public Group Group
+        {
+            get
+            {
+                return _group;
+            }
+            set
+            {
+                _group = value;
+                OnPropertyChanged(nameof(Group));
+            }
+        }
 
         /// <summary>
         /// Список документов для студента.
         /// </summary>
-        public virtual ICollection<BaseDocument> Documents { get; set; }
+        public virtual ICollection<BaseDocument> Documents
+        {
+            get
+            {
+                return _documents;
+            }
+            set
+            {
+                _documents = value;
+                OnPropertyChanged(nameof(Documents));
+                OnPropertyChanged(nameof(Points));
+            }
+        }
 
         public int Points
         {
@@ -120,6 +177,13 @@ namespace HostelData.Model.Student
                 }
                 return startPoints;
             }
+        }
+
+
+        [NotifyPropertyChangedInvocator]
+        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

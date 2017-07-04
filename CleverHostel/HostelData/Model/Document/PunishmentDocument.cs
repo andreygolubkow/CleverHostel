@@ -12,11 +12,23 @@ namespace HostelData.Model.Document
     public class PunishmentDocument : BaseDocument
     {
         private int _points ;
+        private Verdict _verdict;
 
         /// <summary>
         /// Вердикт.
         /// </summary>
-        public Verdict Verdict { get; set; }
+        public Verdict Verdict
+        {
+            get
+            {
+                return _verdict;
+            }
+            set
+            {
+                _verdict = value;
+                OnPropertyChanged(nameof(Verdict));
+            }
+        }
 
         /// <summary>
         /// Очки снимаемые.
@@ -34,6 +46,7 @@ namespace HostelData.Model.Document
                     throw new ArgumentException("Ошибка в выставлении баллов. Нельзя использовать положительные баллы.");
                 }
                 _points = value;
+                OnPropertyChanged(nameof(Points));
             }
         }
     }
