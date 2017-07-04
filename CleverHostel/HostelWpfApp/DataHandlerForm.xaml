@@ -1,0 +1,21 @@
+﻿<Window x:Class="HostelWpfApp.DataHandlerForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HostelWpfApp"
+        mc:Ignorable="d"
+        Title="Импорт студентов" Height="222" Width="294">
+    <Grid Margin="0,0,0,-1">
+        <TextBox x:Name="FileNameTextBox" HorizontalAlignment="Left" Height="23" Margin="24,47,0,0" TextWrapping="Wrap" Text="&#xA;" VerticalAlignment="Top" Width="246" IsReadOnly="True" IsReadOnlyCaretVisible="True"/>
+        <Button x:Name="ImportButton" Content="Импорт" HorizontalAlignment="Left" Margin="195,75,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="SelectFileButton" Content="Выбрать файл" HorizontalAlignment="Left" Margin="87,75,0,0" VerticalAlignment="Top" Width="104" Click="SelectFileButtonClick"/>
+        <Label Content="CSV файл для импорта" HorizontalAlignment="Left" Margin="24,16,0,0" VerticalAlignment="Top"/>
+        <Label Content="Студентов" HorizontalAlignment="Left" Margin="24,99,0,0" VerticalAlignment="Top"/>
+        <Label Content="Комнат" HorizontalAlignment="Left" Margin="24,125,0,0" VerticalAlignment="Top"/>
+        <Label Content="Факультетов" HorizontalAlignment="Left" Margin="24,151,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="StudentCounter" Content="0" HorizontalAlignment="Left" Margin="102,99,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="RoomsCounter" Content="0" HorizontalAlignment="Left" Margin="102,125,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="FacultetsCounter" Content="0" HorizontalAlignment="Left" Margin="102,151,0,0" VerticalAlignment="Top"/>
+    </Grid>
+</Window>
