@@ -4,12 +4,15 @@ using System.Collections.Generic;
 using HostelData.DataBase;
 
 using System.Data.Entity;
+using System.Data.Entity.Infrastructure.Design;
 using System.Linq;
 using System.Windows;
 
 using HostelData.Model.Document;
 using HostelData.Model.Enums;
 using HostelData.Model.Student;
+
+using static System.Configuration.ConfigurationSettings;
 
 namespace HostelWpfApp
 {
@@ -23,7 +26,7 @@ namespace HostelWpfApp
         public MainWindow()
         {
             InitializeComponent();
-            _dataBase = new HostelContext();
+            _dataBase = new HostelContext(AppSettings["HostelModel"]);
             LoadData();
         }
 
