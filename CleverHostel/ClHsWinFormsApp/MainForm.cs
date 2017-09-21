@@ -72,5 +72,11 @@ namespace ClHsWinFormsApp
             LoadData();
 
         }
+
+        private void addPromotionManuItem_Click(object sender, EventArgs e)
+        {
+            var promotionForm = new AddPromotionDocumentForm(_hostelContext.Students.Include(s=>s.Group).ToList(),_hostelContext.Applicants.ToList());
+            promotionForm.ShowDialog();
+        }
     }
 }

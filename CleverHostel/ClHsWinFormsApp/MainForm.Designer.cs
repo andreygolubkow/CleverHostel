@@ -37,6 +37,11 @@
             this.importStudentsMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.studentsGridView = new System.Windows.Forms.DataGridView();
+            this.settingsMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addDocumentMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addPromotionManuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addPunishmentMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addOtherDocumentMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.roomDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,7 +51,6 @@
             this.documentsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pointsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.settingsMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mainMenu.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.studentsGridView)).BeginInit();
@@ -67,6 +71,8 @@
             // 
             // baseMenuItem
             // 
+            this.baseMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addDocumentMenuItem});
             this.baseMenuItem.Name = "baseMenuItem";
             this.baseMenuItem.Size = new System.Drawing.Size(43, 23);
             this.baseMenuItem.Text = "База";
@@ -142,6 +148,42 @@
             this.studentsGridView.Size = new System.Drawing.Size(589, 234);
             this.studentsGridView.TabIndex = 0;
             // 
+            // settingsMenuItem
+            // 
+            this.settingsMenuItem.Name = "settingsMenuItem";
+            this.settingsMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.settingsMenuItem.Text = "Настройки";
+            this.settingsMenuItem.Click += new System.EventHandler(this.settingsMenuItem_Click);
+            // 
+            // addDocumentMenuItem
+            // 
+            this.addDocumentMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addPromotionManuItem,
+            this.addPunishmentMenuItem,
+            this.addOtherDocumentMenuItem});
+            this.addDocumentMenuItem.Name = "addDocumentMenuItem";
+            this.addDocumentMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.addDocumentMenuItem.Text = "Добавить документ";
+            // 
+            // addPromotionManuItem
+            // 
+            this.addPromotionManuItem.Name = "addPromotionManuItem";
+            this.addPromotionManuItem.Size = new System.Drawing.Size(152, 22);
+            this.addPromotionManuItem.Text = "Поощрение";
+            this.addPromotionManuItem.Click += new System.EventHandler(this.addPromotionManuItem_Click);
+            // 
+            // addPunishmentMenuItem
+            // 
+            this.addPunishmentMenuItem.Name = "addPunishmentMenuItem";
+            this.addPunishmentMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.addPunishmentMenuItem.Text = "Взыскание";
+            // 
+            // addOtherDocumentMenuItem
+            // 
+            this.addOtherDocumentMenuItem.Name = "addOtherDocumentMenuItem";
+            this.addOtherDocumentMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.addOtherDocumentMenuItem.Text = "Другой";
+            // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
@@ -204,13 +246,6 @@
             // 
             this.studentBindingSource.DataSource = typeof(HostelData.Model.Student.Student);
             // 
-            // settingsMenuItem
-            // 
-            this.settingsMenuItem.Name = "settingsMenuItem";
-            this.settingsMenuItem.Size = new System.Drawing.Size(175, 22);
-            this.settingsMenuItem.Text = "Настройки";
-            this.settingsMenuItem.Click += new System.EventHandler(this.settingsMenuItem_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -252,6 +287,10 @@
         private System.Windows.Forms.ToolStripMenuItem serviceMenuItem;
         private System.Windows.Forms.ToolStripMenuItem importStudentsMenuItem;
         private System.Windows.Forms.ToolStripMenuItem settingsMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addDocumentMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addPromotionManuItem;
+        private System.Windows.Forms.ToolStripMenuItem addPunishmentMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addOtherDocumentMenuItem;
     }
 }
 
