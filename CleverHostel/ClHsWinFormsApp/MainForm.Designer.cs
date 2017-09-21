@@ -30,9 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             this.mainMenu = new System.Windows.Forms.MenuStrip();
+            this.baseMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.findStudentTextBox = new System.Windows.Forms.ToolStripTextBox();
+            this.serviceMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.importStudentsMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.studentsGridView = new System.Windows.Forms.DataGridView();
-            this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.roomDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,6 +44,8 @@
             this.phoneNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.documentsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pointsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.mainMenu.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.studentsGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).BeginInit();
@@ -48,11 +53,47 @@
             // 
             // mainMenu
             // 
+            this.mainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.baseMenuItem,
+            this.serviceMenuItem,
+            this.findStudentTextBox});
             this.mainMenu.Location = new System.Drawing.Point(0, 0);
             this.mainMenu.Name = "mainMenu";
-            this.mainMenu.Size = new System.Drawing.Size(557, 24);
+            this.mainMenu.Size = new System.Drawing.Size(613, 27);
             this.mainMenu.TabIndex = 0;
             this.mainMenu.Text = "menuStrip1";
+            // 
+            // baseMenuItem
+            // 
+            this.baseMenuItem.Name = "baseMenuItem";
+            this.baseMenuItem.Size = new System.Drawing.Size(43, 23);
+            this.baseMenuItem.Text = "База";
+            // 
+            // findStudentTextBox
+            // 
+            this.findStudentTextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.findStudentTextBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.findStudentTextBox.AutoToolTip = true;
+            this.findStudentTextBox.Name = "findStudentTextBox";
+            this.findStudentTextBox.Overflow = System.Windows.Forms.ToolStripItemOverflow.Never;
+            this.findStudentTextBox.Size = new System.Drawing.Size(200, 23);
+            this.findStudentTextBox.ToolTipText = "Поиск по ФИО";
+            this.findStudentTextBox.TextChanged += new System.EventHandler(this.FindStudentTextBoxTextChanged);
+            // 
+            // serviceMenuItem
+            // 
+            this.serviceMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.importStudentsMenuItem});
+            this.serviceMenuItem.Name = "serviceMenuItem";
+            this.serviceMenuItem.Size = new System.Drawing.Size(59, 23);
+            this.serviceMenuItem.Text = "Сервис";
+            // 
+            // importStudentsMenuItem
+            // 
+            this.importStudentsMenuItem.Name = "importStudentsMenuItem";
+            this.importStudentsMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.importStudentsMenuItem.Text = "Импорт студентов";
+            this.importStudentsMenuItem.Click += new System.EventHandler(this.importStudentsMenuItem_Click);
             // 
             // groupBox1
             // 
@@ -62,7 +103,7 @@
             this.groupBox1.Controls.Add(this.studentsGridView);
             this.groupBox1.Location = new System.Drawing.Point(0, 27);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(545, 256);
+            this.groupBox1.Size = new System.Drawing.Size(601, 259);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "База данных";
@@ -72,6 +113,7 @@
             this.studentsGridView.AllowUserToAddRows = false;
             this.studentsGridView.AllowUserToDeleteRows = false;
             this.studentsGridView.AllowUserToOrderColumns = true;
+            this.studentsGridView.AllowUserToResizeRows = false;
             this.studentsGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -94,12 +136,8 @@
             this.studentsGridView.ReadOnly = true;
             this.studentsGridView.RowHeadersVisible = false;
             this.studentsGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.studentsGridView.Size = new System.Drawing.Size(533, 231);
+            this.studentsGridView.Size = new System.Drawing.Size(589, 234);
             this.studentsGridView.TabIndex = 0;
-            // 
-            // studentBindingSource
-            // 
-            this.studentBindingSource.DataSource = typeof(HostelData.Model.Student.Student);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -159,17 +197,23 @@
             this.pointsDataGridViewTextBoxColumn.Name = "pointsDataGridViewTextBoxColumn";
             this.pointsDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // studentBindingSource
+            // 
+            this.studentBindingSource.DataSource = typeof(HostelData.Model.Student.Student);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(557, 295);
+            this.ClientSize = new System.Drawing.Size(613, 298);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.mainMenu);
             this.MainMenuStrip = this.mainMenu;
             this.Name = "MainForm";
             this.Text = "АИС Студенческий совет";
             this.Load += new System.EventHandler(this.MainForm_Load);
+            this.mainMenu.ResumeLayout(false);
+            this.mainMenu.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.studentsGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).EndInit();
@@ -192,6 +236,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn phoneNumberDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn documentsDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn pointsDataGridViewTextBoxColumn;
+        private System.Windows.Forms.ToolStripMenuItem baseMenuItem;
+        private System.Windows.Forms.ToolStripTextBox findStudentTextBox;
+        private System.Windows.Forms.ToolStripMenuItem serviceMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem importStudentsMenuItem;
     }
 }
 

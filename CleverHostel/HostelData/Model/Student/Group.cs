@@ -127,5 +127,15 @@ namespace HostelData.Model.Student
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+
+        #region Overrides of Object
+
+        /// <inheritdoc />
+        public override string ToString()
+        {
+            return Num;
+        }
+
+        #endregion
     }
 }
