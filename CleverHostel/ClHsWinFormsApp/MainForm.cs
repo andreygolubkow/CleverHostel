@@ -24,9 +24,16 @@ namespace ClHsWinFormsApp
         {
             InitializeComponent();
             
+            LoadData();
+        }
+
+        private void LoadData()
+        {
             _hostelContext = new HostelContext(Properties.Settings.Default.ConnectionString);
+            _hostelContext.Database.CreateIfNotExists();
             studentBindingSource.DataSource = _hostelContext.Students.Include(s => s.Group).ToList();
-            findStudentTextBox.AutoCompleteCustomSource.AddRange(_hostelContext.Students.Select(s=>s.Name).ToArray());
+            findStudentTextBox.AutoCompleteCustomSource.Clear();
+            findStudentTextBox.AutoCompleteCustomSource.AddRange(_hostelContext.Students.Select(s => s.Name).ToArray());
 
         }
 
@@ -56,6 +63,14 @@ namespace ClHsWinFormsApp
         {
             var form = new ImportStudentsForm(_hostelContext);
             form.ShowDialog();
+        }
+
+        private void settingsMenuItem_Click(object sender, EventArgs e)
+        {
+            var settingsForm = new SettingsForm();
+            settingsForm.ShowDialog();
+            LoadData();
+
         }
     }
 }

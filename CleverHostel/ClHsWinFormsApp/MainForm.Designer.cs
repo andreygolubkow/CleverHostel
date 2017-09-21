@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.mainMenu = new System.Windows.Forms.MenuStrip();
             this.baseMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.findStudentTextBox = new System.Windows.Forms.ToolStripTextBox();
@@ -45,6 +46,7 @@
             this.documentsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pointsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.settingsMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mainMenu.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.studentsGridView)).BeginInit();
@@ -83,7 +85,8 @@
             // serviceMenuItem
             // 
             this.serviceMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.importStudentsMenuItem});
+            this.importStudentsMenuItem,
+            this.settingsMenuItem});
             this.serviceMenuItem.Name = "serviceMenuItem";
             this.serviceMenuItem.Size = new System.Drawing.Size(59, 23);
             this.serviceMenuItem.Text = "Сервис";
@@ -201,6 +204,13 @@
             // 
             this.studentBindingSource.DataSource = typeof(HostelData.Model.Student.Student);
             // 
+            // settingsMenuItem
+            // 
+            this.settingsMenuItem.Name = "settingsMenuItem";
+            this.settingsMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.settingsMenuItem.Text = "Настройки";
+            this.settingsMenuItem.Click += new System.EventHandler(this.settingsMenuItem_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -208,6 +218,7 @@
             this.ClientSize = new System.Drawing.Size(613, 298);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.mainMenu);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.mainMenu;
             this.Name = "MainForm";
             this.Text = "АИС Студенческий совет";
@@ -240,6 +251,7 @@
         private System.Windows.Forms.ToolStripTextBox findStudentTextBox;
         private System.Windows.Forms.ToolStripMenuItem serviceMenuItem;
         private System.Windows.Forms.ToolStripMenuItem importStudentsMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem settingsMenuItem;
     }
 }
 
