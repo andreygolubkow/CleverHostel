@@ -76,7 +76,16 @@ namespace ClHsWinFormsApp
         private void addPromotionManuItem_Click(object sender, EventArgs e)
         {
             var promotionForm = new AddPromotionDocumentForm(_hostelContext.Students.Include(s=>s.Group).ToList(),_hostelContext.Applicants.ToList());
-            promotionForm.ShowDialog();
+            if ( promotionForm.ShowDialog() == DialogResult.OK )
+            {
+                _hostelContext.Documents.Add(promotionForm.PromotionDocument);
+                _hostelContext.SaveChanges();
+            }
+        }
+
+        private void addPunishmentMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

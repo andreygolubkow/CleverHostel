@@ -62,6 +62,12 @@
     <Compile Include="AddPromotionDocumentForm.Designer.cs">
       <DependentUpon>AddPromotionDocumentForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddPunishmentDocumentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddPunishmentDocumentForm.Designer.cs">
+      <DependentUpon>AddPunishmentDocumentForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Components\DataBaseControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -90,6 +96,9 @@
     </Compile>
     <EmbeddedResource Include="AddPromotionDocumentForm.resx">
       <DependentUpon>AddPromotionDocumentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddPunishmentDocumentForm.resx">
+      <DependentUpon>AddPunishmentDocumentForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Components\DataBaseControl.resx">
       <DependentUpon>DataBaseControl.cs</DependentUpon>

@@ -177,6 +177,7 @@
             this.addPunishmentMenuItem.Name = "addPunishmentMenuItem";
             this.addPunishmentMenuItem.Size = new System.Drawing.Size(152, 22);
             this.addPunishmentMenuItem.Text = "Взыскание";
+            this.addPunishmentMenuItem.Click += new System.EventHandler(this.addPunishmentMenuItem_Click);
             // 
             // addOtherDocumentMenuItem
             // 

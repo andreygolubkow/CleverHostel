@@ -13,22 +13,21 @@ using HostelData.Model.Student;
 
 namespace ClHsWinFormsApp
 {
-    public partial class AddPromotionDocumentForm : Form
+    public partial class AddPunishmentDocumentForm : Form
     {
         private List<Student> _students;
-
         private List<Applicant> _applicants;
 
-        private PromotionDocument _document;
+        private PunishmentDocument _document;
 
-        public AddPromotionDocumentForm(List<Student> students, List<Applicant> applicants)
+        public AddPunishmentDocumentForm(List<Student> students, List<Applicant> applicants)
         {
             InitializeComponent();
 
             _students = students;
             _applicants = applicants;
 
-            _document = new PromotionDocument
+            _document = new PunishmentDocument()
                         {
                             Students = new List<Student>()
                         };
@@ -36,16 +35,7 @@ namespace ClHsWinFormsApp
 
             addStudentBindingSource.DataSource = _students;
 
-            applicantBindingSource.DataSource = _applicants;
-        }
-
-        [DefaultValue(null, "Empty")]
-        public PromotionDocument PromotionDocument => _document;
-
-        private void addStudentComboBox_SelectionChangeCommitted(object sender, EventArgs e)
-        {
-
-            
+            //applicantBindingSource.DataSource = _applicants;
         }
 
         private void addStudentButton_Click(object sender, EventArgs e)
@@ -55,7 +45,7 @@ namespace ClHsWinFormsApp
 
         private void addByRoomButton_Click(object sender, EventArgs e)
         {
-            foreach (Student student in _students.Where(s=>s.Room == ((Student)addStudentBindingSource.Current).Room))
+            foreach (Student student in _students.Where(s => s.Room == ((Student)addStudentBindingSource.Current).Room))
             {
                 studentsGridViewBindingSource.Add(student);
             }
@@ -74,17 +64,6 @@ namespace ClHsWinFormsApp
                 selectedStudentGroup.Text = student.Group != null ? student.Group.Num : "-";
                 selectedStudentRoom.Text = student.Room.ToString();
             }
-        }
-
-        private void addPromotionButton_Click(object sender, EventArgs e)
-        {
-            DialogResult = DialogResult.OK;
-            _document.Name = nameTextBox.Text;
-            _document.Points = Convert.ToInt32(pointsTextBox.Text);
-            _document.Comments = commentsTextBox.Text;
-            _document.DocumentDate = datePicker.Value;
-            _document.Applicant = (Applicant)applicantBindingSource.Current;
-
         }
     }
 }
