@@ -106,7 +106,9 @@
             this.studentsGridView.DataSource = this.studentsGridViewBindingSource;
             this.studentsGridView.Location = new System.Drawing.Point(6, 19);
             this.studentsGridView.Name = "studentsGridView";
+            this.studentsGridView.ReadOnly = true;
             this.studentsGridView.RowHeadersVisible = false;
+            this.studentsGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.studentsGridView.Size = new System.Drawing.Size(389, 135);
             this.studentsGridView.TabIndex = 0;
             // 
@@ -119,6 +121,7 @@
             this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
             this.idDataGridViewTextBoxColumn.HeaderText = "Id";
             this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
             this.idDataGridViewTextBoxColumn.Visible = false;
             // 
             // nameDataGridViewTextBoxColumn
@@ -126,6 +129,7 @@
             this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
             this.nameDataGridViewTextBoxColumn.HeaderText = "ФИО";
             this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
             this.nameDataGridViewTextBoxColumn.Width = 250;
             // 
             // roomDataGridViewTextBoxColumn
@@ -133,12 +137,14 @@
             this.roomDataGridViewTextBoxColumn.DataPropertyName = "Room";
             this.roomDataGridViewTextBoxColumn.HeaderText = "Комната";
             this.roomDataGridViewTextBoxColumn.Name = "roomDataGridViewTextBoxColumn";
+            this.roomDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // sexDataGridViewTextBoxColumn
             // 
             this.sexDataGridViewTextBoxColumn.DataPropertyName = "Sex";
             this.sexDataGridViewTextBoxColumn.HeaderText = "Sex";
             this.sexDataGridViewTextBoxColumn.Name = "sexDataGridViewTextBoxColumn";
+            this.sexDataGridViewTextBoxColumn.ReadOnly = true;
             this.sexDataGridViewTextBoxColumn.Visible = false;
             // 
             // phoneNumberDataGridViewTextBoxColumn
@@ -146,6 +152,7 @@
             this.phoneNumberDataGridViewTextBoxColumn.DataPropertyName = "PhoneNumber";
             this.phoneNumberDataGridViewTextBoxColumn.HeaderText = "PhoneNumber";
             this.phoneNumberDataGridViewTextBoxColumn.Name = "phoneNumberDataGridViewTextBoxColumn";
+            this.phoneNumberDataGridViewTextBoxColumn.ReadOnly = true;
             this.phoneNumberDataGridViewTextBoxColumn.Visible = false;
             // 
             // groupDataGridViewTextBoxColumn
@@ -153,6 +160,7 @@
             this.groupDataGridViewTextBoxColumn.DataPropertyName = "Group";
             this.groupDataGridViewTextBoxColumn.HeaderText = "Group";
             this.groupDataGridViewTextBoxColumn.Name = "groupDataGridViewTextBoxColumn";
+            this.groupDataGridViewTextBoxColumn.ReadOnly = true;
             this.groupDataGridViewTextBoxColumn.Visible = false;
             // 
             // documentsDataGridViewTextBoxColumn
@@ -160,6 +168,7 @@
             this.documentsDataGridViewTextBoxColumn.DataPropertyName = "Documents";
             this.documentsDataGridViewTextBoxColumn.HeaderText = "Documents";
             this.documentsDataGridViewTextBoxColumn.Name = "documentsDataGridViewTextBoxColumn";
+            this.documentsDataGridViewTextBoxColumn.ReadOnly = true;
             this.documentsDataGridViewTextBoxColumn.Visible = false;
             // 
             // pointsDataGridViewTextBoxColumn
@@ -182,6 +191,7 @@
             this.addStudentComboBox.Size = new System.Drawing.Size(377, 21);
             this.addStudentComboBox.TabIndex = 1;
             this.addStudentComboBox.ValueMember = "Id";
+            this.addStudentComboBox.SelectionChangeCommitted += new System.EventHandler(this.addStudentComboBox_SelectionChangeCommitted);
             // 
             // groupBox2
             // 
@@ -200,6 +210,7 @@
             // addStudentBindingSource
             // 
             this.addStudentBindingSource.DataSource = typeof(HostelData.Model.Student.Student);
+            this.addStudentBindingSource.CurrentChanged += new System.EventHandler(this.addStudentBindingSource_CurrentChanged);
             // 
             // label1
             // 
@@ -245,6 +256,7 @@
             this.addStudentButton.TabIndex = 3;
             this.addStudentButton.Text = "Добавить в список";
             this.addStudentButton.UseVisualStyleBackColor = true;
+            this.addStudentButton.Click += new System.EventHandler(this.addStudentButton_Click);
             // 
             // removeSelectedStudent
             // 
@@ -254,6 +266,7 @@
             this.removeSelectedStudent.TabIndex = 4;
             this.removeSelectedStudent.Text = "Удалить";
             this.removeSelectedStudent.UseVisualStyleBackColor = true;
+            this.removeSelectedStudent.Click += new System.EventHandler(this.removeSelectedStudent_Click);
             // 
             // groupBox3
             // 
@@ -382,6 +395,7 @@
             this.addByRoomButton.TabIndex = 5;
             this.addByRoomButton.Text = "Добавить комнату";
             this.addByRoomButton.UseVisualStyleBackColor = true;
+            this.addByRoomButton.Click += new System.EventHandler(this.addByRoomButton_Click);
             // 
             // AddPromotionDocumentForm
             // 

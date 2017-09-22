@@ -37,6 +37,38 @@ namespace ClHsWinFormsApp
             applicantBindingSource.DataSource = _applicants;
         }
 
+        private void addStudentComboBox_SelectionChangeCommitted(object sender, EventArgs e)
+        {
 
+            
+        }
+
+        private void addStudentButton_Click(object sender, EventArgs e)
+        {
+            studentsGridViewBindingSource.Add(addStudentBindingSource.Current);
+        }
+
+        private void addByRoomButton_Click(object sender, EventArgs e)
+        {
+            foreach (Student student in _students.Where(s=>s.Room == ((Student)addStudentBindingSource.Current).Room))
+            {
+                studentsGridViewBindingSource.Add(student);
+            }
+        }
+
+        private void removeSelectedStudent_Click(object sender, EventArgs e)
+        {
+            studentsGridViewBindingSource.RemoveCurrent();
+        }
+
+        private void addStudentBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+            var student = ((Student)addStudentBindingSource.Current);
+            if (student != null)
+            {
+                selectedStudentGroup.Text = student.Group != null ? student.Group.Num : "-";
+                selectedStudentRoom.Text = student.Room.ToString();
+            }
+        }
     }
 }
