@@ -73,7 +73,7 @@ namespace ClHsWinFormsApp
 
         private void addPunishmentButton_Click(object sender, EventArgs e)
         {
-            _document.Points = Convert.ToInt32(pointsTextBox.Text);
+            _document.Points = -1* Convert.ToInt32(pointsTextBox.Text);
             _document.Verdict = (Verdict)verdictComboBox.SelectedIndex;
             _document.Applicant = (Applicant)applicantBindingSource.Current;
             _document.Comments = commentsTextBox.Text;

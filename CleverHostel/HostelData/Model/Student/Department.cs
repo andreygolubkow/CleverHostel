@@ -43,6 +43,16 @@ namespace HostelData.Model.Student
             }
         }
 
+        #region Overrides of Object
+
+        /// <inheritdoc />
+        public override string ToString()
+        {
+            return Name;
+        }
+
+        #endregion
+
         [NotifyPropertyChangedInvocator]
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {

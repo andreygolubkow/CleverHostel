@@ -83,5 +83,36 @@ namespace ClHsWinFormsApp
                 _hostelContext.SaveChanges();
             }
         }
+
+        private void findRoomTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (findRoomTextBox.TextLength > 0)
+            {
+                int room=0;
+                try
+                {
+                    room = Convert.ToInt32(findRoomTextBox.Text);
+                }
+                catch ( Exception exception )
+                {                
+                }
+
+                var list = _hostelContext.Students.Include(s => s.Group)
+                        .Where(s => s.Room == room)
+                        .ToList();
+                studentBindingSource.DataSource = list;
+            }
+            else
+            {
+                studentBindingSource.DataSource = _hostelContext.Students.Include(s => s.Group).ToList();
+            }
+        }
+
+        private void applicantsMenuItem_Click(object sender, EventArgs e)
+        {
+            var applicantsForm = new ApplicantsListForm(_hostelContext);
+            applicantsForm.ShowDialog();
+            LoadData();
+        }
     }
 }

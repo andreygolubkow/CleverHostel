@@ -56,6 +56,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddApplicantForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddApplicantForm.Designer.cs">
+      <DependentUpon>AddApplicantForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddOtherDocumentForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,11 +80,23 @@
     <Compile Include="AddPunishmentDocumentForm.Designer.cs">
       <DependentUpon>AddPunishmentDocumentForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ApplicantsListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicantsListForm.Designer.cs">
+      <DependentUpon>ApplicantsListForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Components\DataBaseControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Components\DataBaseControl.Designer.cs">
       <DependentUpon>DataBaseControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentsListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DocumentsListForm.Designer.cs">
+      <DependentUpon>DocumentsListForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ImportStudentsForm.cs">
       <SubType>Form</SubType>
@@ -100,6 +118,9 @@
     <Compile Include="SettingsForm.Designer.cs">
       <DependentUpon>SettingsForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddApplicantForm.resx">
+      <DependentUpon>AddApplicantForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddOtherDocumentForm.resx">
       <DependentUpon>AddOtherDocumentForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -109,8 +130,14 @@
     <EmbeddedResource Include="AddPunishmentDocumentForm.resx">
       <DependentUpon>AddPunishmentDocumentForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ApplicantsListForm.resx">
+      <DependentUpon>ApplicantsListForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Components\DataBaseControl.resx">
       <DependentUpon>DataBaseControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DocumentsListForm.resx">
+      <DependentUpon>DocumentsListForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ImportStudentsForm.resx">
       <DependentUpon>ImportStudentsForm.cs</DependentUpon>
@@ -132,6 +159,7 @@
       <DependentUpon>SettingsForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\HostelData.Model.Document.BaseDocument.datasource" />
     <None Include="Properties\DataSources\HostelData.Model.Student.Applicant.datasource" />
     <None Include="Properties\DataSources\HostelData.Model.Student.Student.datasource" />
     <None Include="Properties\Settings.settings">

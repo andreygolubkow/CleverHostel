@@ -52,18 +52,18 @@
             this.pointsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.studentsGridViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.documentDatePicker = new System.Windows.Forms.DateTimePicker();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.pointsTextBox = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.commentsTextBox = new System.Windows.Forms.TextBox();
-            this.applicantComboBox = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.verdictComboBox = new System.Windows.Forms.ComboBox();
-            this.addPunishmentButton = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.applicantComboBox = new System.Windows.Forms.ComboBox();
             this.applicantBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.commentsTextBox = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.pointsTextBox = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.documentDatePicker = new System.Windows.Forms.DateTimePicker();
+            this.addPunishmentButton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.addStudentBindingSource)).BeginInit();
@@ -296,82 +296,6 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Взыскание";
             // 
-            // documentDatePicker
-            // 
-            this.documentDatePicker.Location = new System.Drawing.Point(6, 32);
-            this.documentDatePicker.Name = "documentDatePicker";
-            this.documentDatePicker.Size = new System.Drawing.Size(224, 20);
-            this.documentDatePicker.TabIndex = 0;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 16);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(33, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Дата";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 55);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(157, 13);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Баллы (отрицательное число)";
-            // 
-            // pointsTextBox
-            // 
-            this.pointsTextBox.Location = new System.Drawing.Point(6, 71);
-            this.pointsTextBox.Name = "pointsTextBox";
-            this.pointsTextBox.Size = new System.Drawing.Size(224, 20);
-            this.pointsTextBox.TabIndex = 3;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 94);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(77, 13);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Комментарии";
-            // 
-            // commentsTextBox
-            // 
-            this.commentsTextBox.Location = new System.Drawing.Point(6, 110);
-            this.commentsTextBox.Name = "commentsTextBox";
-            this.commentsTextBox.Size = new System.Drawing.Size(224, 20);
-            this.commentsTextBox.TabIndex = 5;
-            // 
-            // applicantComboBox
-            // 
-            this.applicantComboBox.DataSource = this.applicantBindingSource;
-            this.applicantComboBox.DisplayMember = "Name";
-            this.applicantComboBox.FormattingEnabled = true;
-            this.applicantComboBox.Location = new System.Drawing.Point(6, 195);
-            this.applicantComboBox.Name = "applicantComboBox";
-            this.applicantComboBox.Size = new System.Drawing.Size(224, 21);
-            this.applicantComboBox.TabIndex = 6;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 179);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(61, 13);
-            this.label6.TabIndex = 7;
-            this.label6.Text = "Заявитель";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 133);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(49, 13);
-            this.label7.TabIndex = 8;
-            this.label7.Text = "Вердикт";
-            // 
             // verdictComboBox
             // 
             this.verdictComboBox.FormattingEnabled = true;
@@ -384,6 +308,86 @@
             this.verdictComboBox.Size = new System.Drawing.Size(224, 21);
             this.verdictComboBox.TabIndex = 9;
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(6, 133);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(49, 13);
+            this.label7.TabIndex = 8;
+            this.label7.Text = "Вердикт";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(6, 179);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(61, 13);
+            this.label6.TabIndex = 7;
+            this.label6.Text = "Заявитель";
+            // 
+            // applicantComboBox
+            // 
+            this.applicantComboBox.DataSource = this.applicantBindingSource;
+            this.applicantComboBox.DisplayMember = "Name";
+            this.applicantComboBox.FormattingEnabled = true;
+            this.applicantComboBox.Location = new System.Drawing.Point(6, 195);
+            this.applicantComboBox.Name = "applicantComboBox";
+            this.applicantComboBox.Size = new System.Drawing.Size(224, 21);
+            this.applicantComboBox.TabIndex = 6;
+            // 
+            // applicantBindingSource
+            // 
+            this.applicantBindingSource.DataSource = typeof(HostelData.Model.Student.Applicant);
+            // 
+            // commentsTextBox
+            // 
+            this.commentsTextBox.Location = new System.Drawing.Point(6, 110);
+            this.commentsTextBox.Name = "commentsTextBox";
+            this.commentsTextBox.Size = new System.Drawing.Size(224, 20);
+            this.commentsTextBox.TabIndex = 5;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(6, 94);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(77, 13);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "Комментарии";
+            // 
+            // pointsTextBox
+            // 
+            this.pointsTextBox.Location = new System.Drawing.Point(6, 71);
+            this.pointsTextBox.Name = "pointsTextBox";
+            this.pointsTextBox.Size = new System.Drawing.Size(224, 20);
+            this.pointsTextBox.TabIndex = 3;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 55);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(40, 13);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Баллы";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 16);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(33, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Дата";
+            // 
+            // documentDatePicker
+            // 
+            this.documentDatePicker.Location = new System.Drawing.Point(6, 32);
+            this.documentDatePicker.Name = "documentDatePicker";
+            this.documentDatePicker.Size = new System.Drawing.Size(224, 20);
+            this.documentDatePicker.TabIndex = 0;
+            // 
             // addPunishmentButton
             // 
             this.addPunishmentButton.Location = new System.Drawing.Point(530, 256);
@@ -393,10 +397,6 @@
             this.addPunishmentButton.Text = "Добавить взыскание";
             this.addPunishmentButton.UseVisualStyleBackColor = true;
             this.addPunishmentButton.Click += new System.EventHandler(this.addPunishmentButton_Click);
-            // 
-            // applicantBindingSource
-            // 
-            this.applicantBindingSource.DataSource = typeof(HostelData.Model.Student.Applicant);
             // 
             // AddPunishmentDocumentForm
             // 
