@@ -1,18 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
-using System.Data;
 using System.Data.Entity;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using HostelData.DataBase;
-using HostelData.Model.Student;
-using HostelData.Tools;
 
 namespace ClHsWinFormsApp
 {
@@ -85,7 +76,12 @@ namespace ClHsWinFormsApp
 
         private void addPunishmentMenuItem_Click(object sender, EventArgs e)
         {
-
+            var punishmentForm = new AddPunishmentDocumentForm(_hostelContext.Students.Include(s => s.Group).ToList(), _hostelContext.Applicants.ToList());
+            if (punishmentForm.ShowDialog() == DialogResult.OK)
+            {
+                _hostelContext.Documents.Add(punishmentForm.PunishmentDocument);
+                _hostelContext.SaveChanges();
+            }
         }
     }
 }

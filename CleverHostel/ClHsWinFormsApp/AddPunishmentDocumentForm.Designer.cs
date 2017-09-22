@@ -52,22 +52,25 @@
             this.pointsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.studentsGridViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.documentDatePicker = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.pointsTextBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.commentsTextBox = new System.Windows.Forms.TextBox();
+            this.applicantComboBox = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.verdictComboBox = new System.Windows.Forms.ComboBox();
+            this.addPunishmentButton = new System.Windows.Forms.Button();
+            this.applicantBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.addStudentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentsGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentsGridViewBindingSource)).BeginInit();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.applicantBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -276,16 +279,16 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.comboBox2);
+            this.groupBox3.Controls.Add(this.verdictComboBox);
             this.groupBox3.Controls.Add(this.label7);
             this.groupBox3.Controls.Add(this.label6);
-            this.groupBox3.Controls.Add(this.comboBox1);
-            this.groupBox3.Controls.Add(this.textBox2);
+            this.groupBox3.Controls.Add(this.applicantComboBox);
+            this.groupBox3.Controls.Add(this.commentsTextBox);
             this.groupBox3.Controls.Add(this.label5);
-            this.groupBox3.Controls.Add(this.textBox1);
+            this.groupBox3.Controls.Add(this.pointsTextBox);
             this.groupBox3.Controls.Add(this.label4);
             this.groupBox3.Controls.Add(this.label2);
-            this.groupBox3.Controls.Add(this.dateTimePicker1);
+            this.groupBox3.Controls.Add(this.documentDatePicker);
             this.groupBox3.Location = new System.Drawing.Point(419, 12);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(237, 227);
@@ -293,12 +296,12 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Взыскание";
             // 
-            // dateTimePicker1
+            // documentDatePicker
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(6, 32);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(224, 20);
-            this.dateTimePicker1.TabIndex = 0;
+            this.documentDatePicker.Location = new System.Drawing.Point(6, 32);
+            this.documentDatePicker.Name = "documentDatePicker";
+            this.documentDatePicker.Size = new System.Drawing.Size(224, 20);
+            this.documentDatePicker.TabIndex = 0;
             // 
             // label2
             // 
@@ -318,12 +321,12 @@
             this.label4.TabIndex = 2;
             this.label4.Text = "Баллы (отрицательное число)";
             // 
-            // textBox1
+            // pointsTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(6, 71);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(224, 20);
-            this.textBox1.TabIndex = 3;
+            this.pointsTextBox.Location = new System.Drawing.Point(6, 71);
+            this.pointsTextBox.Name = "pointsTextBox";
+            this.pointsTextBox.Size = new System.Drawing.Size(224, 20);
+            this.pointsTextBox.TabIndex = 3;
             // 
             // label5
             // 
@@ -334,20 +337,22 @@
             this.label5.TabIndex = 4;
             this.label5.Text = "Комментарии";
             // 
-            // textBox2
+            // commentsTextBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(6, 110);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(224, 20);
-            this.textBox2.TabIndex = 5;
+            this.commentsTextBox.Location = new System.Drawing.Point(6, 110);
+            this.commentsTextBox.Name = "commentsTextBox";
+            this.commentsTextBox.Size = new System.Drawing.Size(224, 20);
+            this.commentsTextBox.TabIndex = 5;
             // 
-            // comboBox1
+            // applicantComboBox
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(6, 195);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(224, 21);
-            this.comboBox1.TabIndex = 6;
+            this.applicantComboBox.DataSource = this.applicantBindingSource;
+            this.applicantComboBox.DisplayMember = "Name";
+            this.applicantComboBox.FormattingEnabled = true;
+            this.applicantComboBox.Location = new System.Drawing.Point(6, 195);
+            this.applicantComboBox.Name = "applicantComboBox";
+            this.applicantComboBox.Size = new System.Drawing.Size(224, 21);
+            this.applicantComboBox.TabIndex = 6;
             // 
             // label6
             // 
@@ -367,21 +372,41 @@
             this.label7.TabIndex = 8;
             this.label7.Text = "Вердикт";
             // 
-            // comboBox2
+            // verdictComboBox
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(6, 148);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(224, 21);
-            this.comboBox2.TabIndex = 9;
+            this.verdictComboBox.FormattingEnabled = true;
+            this.verdictComboBox.Items.AddRange(new object[] {
+            "Замечание",
+            "Предупреждение",
+            "Выговор"});
+            this.verdictComboBox.Location = new System.Drawing.Point(6, 148);
+            this.verdictComboBox.Name = "verdictComboBox";
+            this.verdictComboBox.Size = new System.Drawing.Size(224, 21);
+            this.verdictComboBox.TabIndex = 9;
+            // 
+            // addPunishmentButton
+            // 
+            this.addPunishmentButton.Location = new System.Drawing.Point(530, 256);
+            this.addPunishmentButton.Name = "addPunishmentButton";
+            this.addPunishmentButton.Size = new System.Drawing.Size(126, 23);
+            this.addPunishmentButton.TabIndex = 3;
+            this.addPunishmentButton.Text = "Добавить взыскание";
+            this.addPunishmentButton.UseVisualStyleBackColor = true;
+            this.addPunishmentButton.Click += new System.EventHandler(this.addPunishmentButton_Click);
+            // 
+            // applicantBindingSource
+            // 
+            this.applicantBindingSource.DataSource = typeof(HostelData.Model.Student.Applicant);
             // 
             // AddPunishmentDocumentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(661, 288);
+            this.Controls.Add(this.addPunishmentButton);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AddPunishmentDocumentForm";
             this.Text = "Добавить взыскание";
@@ -393,6 +418,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.studentsGridViewBindingSource)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.applicantBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -422,14 +448,16 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn pointsDataGridViewTextBoxColumn;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.DateTimePicker documentDatePicker;
+        private System.Windows.Forms.TextBox pointsTextBox;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox commentsTextBox;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox applicantComboBox;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox verdictComboBox;
+        private System.Windows.Forms.Button addPunishmentButton;
+        private System.Windows.Forms.BindingSource applicantBindingSource;
     }
 }

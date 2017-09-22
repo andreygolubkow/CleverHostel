@@ -15,6 +15,6 @@ namespace HostelData.Model.Enums
         /// <summary>
         /// Выговор.
         /// </summary>
-        Rebuke = 3
+        Rebuke = 2
     }
 }

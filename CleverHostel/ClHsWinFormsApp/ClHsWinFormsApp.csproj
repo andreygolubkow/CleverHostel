@@ -56,6 +56,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddOtherDocumentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddOtherDocumentForm.Designer.cs">
+      <DependentUpon>AddOtherDocumentForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddPromotionDocumentForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,6 +100,9 @@
     <Compile Include="SettingsForm.Designer.cs">
       <DependentUpon>SettingsForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddOtherDocumentForm.resx">
+      <DependentUpon>AddOtherDocumentForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddPromotionDocumentForm.resx">
       <DependentUpon>AddPromotionDocumentForm.cs</DependentUpon>
     </EmbeddedResource>

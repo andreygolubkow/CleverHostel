@@ -37,6 +37,7 @@ namespace ClHsWinFormsApp
             addStudentBindingSource.DataSource = _students;
 
             applicantBindingSource.DataSource = _applicants;
+            DialogResult = DialogResult.Cancel;
         }
 
         [DefaultValue(null, "Empty")]

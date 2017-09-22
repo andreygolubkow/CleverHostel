@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using HostelData.Model.Document;
+using HostelData.Model.Enums;
 using HostelData.Model.Student;
 
 namespace ClHsWinFormsApp
@@ -35,8 +36,12 @@ namespace ClHsWinFormsApp
 
             addStudentBindingSource.DataSource = _students;
 
-            //applicantBindingSource.DataSource = _applicants;
+            applicantBindingSource.DataSource = _applicants;
+
+            DialogResult= DialogResult.Cancel;
         }
+
+        public PunishmentDocument PunishmentDocument => _document;
 
         private void addStudentButton_Click(object sender, EventArgs e)
         {
@@ -65,5 +70,17 @@ namespace ClHsWinFormsApp
                 selectedStudentRoom.Text = student.Room.ToString();
             }
         }
+
+        private void addPunishmentButton_Click(object sender, EventArgs e)
+        {
+            _document.Points = Convert.ToInt32(pointsTextBox.Text);
+            _document.Verdict = (Verdict)verdictComboBox.SelectedIndex;
+            _document.Applicant = (Applicant)applicantBindingSource.Current;
+            _document.Comments = commentsTextBox.Text;
+            _document.DocumentDate = documentDatePicker.Value;
+            DialogResult = DialogResult.OK;
+        }
+
+
     }
 }
