@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Windows.Forms;
 
 using HostelData.DataBase;
+using HostelData.Model.Student;
 
 namespace ClHsWinFormsApp
 {
@@ -114,5 +116,24 @@ namespace ClHsWinFormsApp
             applicantsForm.ShowDialog();
             LoadData();
         }
+
+        private void studentsGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+        }
+
+        private void studentsGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var studentId = ((Student)studentBindingSource.Current).Id;
+            _hostelContext.Applicants.Load();
+            _hostelContext.Departments.Load();
+            
+            var student = _hostelContext.Students.Include(s => s.Group)
+                    .Include(s => s.Documents)
+                    .FirstOrDefault(s => s.Id == studentId);
+            var cardForm = new StudentCardForm(student);
+            cardForm.ShowDialog();
+
+        }
+
     }
 }

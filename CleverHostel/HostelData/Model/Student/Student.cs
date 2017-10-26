@@ -33,6 +33,7 @@ namespace HostelData.Model.Student
 
         public Student()
         {
+            Visible = true;
             //Documents = new List<BaseDocument>();
         }
 
@@ -178,6 +179,8 @@ namespace HostelData.Model.Student
                 return startPoints;
             }
         }
+
+        public bool Visible { get; set; }
 
 
         [NotifyPropertyChangedInvocator]

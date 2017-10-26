@@ -36,7 +36,6 @@
             this.addPromotionManuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addPunishmentMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.показатьДокументыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.applicantsMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.serviceMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.importStudentsMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -78,7 +77,6 @@
             this.baseMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addDocumentMenuItem,
             this.toolStripSeparator1,
-            this.показатьДокументыToolStripMenuItem,
             this.applicantsMenuItem});
             this.baseMenuItem.Name = "baseMenuItem";
             this.baseMenuItem.Size = new System.Drawing.Size(43, 23);
@@ -90,38 +88,32 @@
             this.addPromotionManuItem,
             this.addPunishmentMenuItem});
             this.addDocumentMenuItem.Name = "addDocumentMenuItem";
-            this.addDocumentMenuItem.Size = new System.Drawing.Size(188, 22);
+            this.addDocumentMenuItem.Size = new System.Drawing.Size(181, 22);
             this.addDocumentMenuItem.Text = "Добавить документ";
             // 
             // addPromotionManuItem
             // 
             this.addPromotionManuItem.Name = "addPromotionManuItem";
-            this.addPromotionManuItem.Size = new System.Drawing.Size(141, 22);
+            this.addPromotionManuItem.Size = new System.Drawing.Size(152, 22);
             this.addPromotionManuItem.Text = "Поощрение";
             this.addPromotionManuItem.Click += new System.EventHandler(this.addPromotionManuItem_Click);
             // 
             // addPunishmentMenuItem
             // 
             this.addPunishmentMenuItem.Name = "addPunishmentMenuItem";
-            this.addPunishmentMenuItem.Size = new System.Drawing.Size(141, 22);
+            this.addPunishmentMenuItem.Size = new System.Drawing.Size(152, 22);
             this.addPunishmentMenuItem.Text = "Взыскание";
             this.addPunishmentMenuItem.Click += new System.EventHandler(this.addPunishmentMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(185, 6);
-            // 
-            // показатьДокументыToolStripMenuItem
-            // 
-            this.показатьДокументыToolStripMenuItem.Name = "показатьДокументыToolStripMenuItem";
-            this.показатьДокументыToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
-            this.показатьДокументыToolStripMenuItem.Text = "Показать документы";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(178, 6);
             // 
             // applicantsMenuItem
             // 
             this.applicantsMenuItem.Name = "applicantsMenuItem";
-            this.applicantsMenuItem.Size = new System.Drawing.Size(188, 22);
+            this.applicantsMenuItem.Size = new System.Drawing.Size(181, 22);
             this.applicantsMenuItem.Text = "Заявители";
             this.applicantsMenuItem.Click += new System.EventHandler(this.applicantsMenuItem_Click);
             // 
@@ -207,6 +199,8 @@
             this.studentsGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.studentsGridView.Size = new System.Drawing.Size(589, 234);
             this.studentsGridView.TabIndex = 0;
+            this.studentsGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.studentsGridView_CellContentClick);
+            this.studentsGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.studentsGridView_CellDoubleClick);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -315,7 +309,6 @@
         private System.Windows.Forms.ToolStripMenuItem addPromotionManuItem;
         private System.Windows.Forms.ToolStripMenuItem addPunishmentMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripMenuItem показатьДокументыToolStripMenuItem;
         private System.Windows.Forms.ToolStripTextBox findRoomTextBox;
         private System.Windows.Forms.ToolStripMenuItem applicantsMenuItem;
     }

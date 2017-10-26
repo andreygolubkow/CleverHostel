@@ -118,6 +118,12 @@
     <Compile Include="SettingsForm.Designer.cs">
       <DependentUpon>SettingsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="StudentCardForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StudentCardForm.Designer.cs">
+      <DependentUpon>StudentCardForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AddApplicantForm.resx">
       <DependentUpon>AddApplicantForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -157,6 +163,9 @@
     </Compile>
     <EmbeddedResource Include="SettingsForm.resx">
       <DependentUpon>SettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StudentCardForm.resx">
+      <DependentUpon>StudentCardForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\HostelData.Model.Document.BaseDocument.datasource" />
