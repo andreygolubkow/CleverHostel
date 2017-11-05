@@ -53,6 +53,7 @@
             this.documentsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pointsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.addStudentMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mainMenu.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.studentsGridView)).BeginInit();
@@ -77,7 +78,8 @@
             this.baseMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addDocumentMenuItem,
             this.toolStripSeparator1,
-            this.applicantsMenuItem});
+            this.applicantsMenuItem,
+            this.addStudentMenuItem});
             this.baseMenuItem.Name = "baseMenuItem";
             this.baseMenuItem.Size = new System.Drawing.Size(43, 23);
             this.baseMenuItem.Text = "База";
@@ -94,14 +96,14 @@
             // addPromotionManuItem
             // 
             this.addPromotionManuItem.Name = "addPromotionManuItem";
-            this.addPromotionManuItem.Size = new System.Drawing.Size(152, 22);
+            this.addPromotionManuItem.Size = new System.Drawing.Size(141, 22);
             this.addPromotionManuItem.Text = "Поощрение";
             this.addPromotionManuItem.Click += new System.EventHandler(this.addPromotionManuItem_Click);
             // 
             // addPunishmentMenuItem
             // 
             this.addPunishmentMenuItem.Name = "addPunishmentMenuItem";
-            this.addPunishmentMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.addPunishmentMenuItem.Size = new System.Drawing.Size(141, 22);
             this.addPunishmentMenuItem.Text = "Взыскание";
             this.addPunishmentMenuItem.Click += new System.EventHandler(this.addPunishmentMenuItem_Click);
             // 
@@ -264,6 +266,13 @@
             // 
             this.studentBindingSource.DataSource = typeof(HostelData.Model.Student.Student);
             // 
+            // addStudentMenuItem
+            // 
+            this.addStudentMenuItem.Name = "addStudentMenuItem";
+            this.addStudentMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.addStudentMenuItem.Text = "Добавить студента";
+            this.addStudentMenuItem.Click += new System.EventHandler(this.addStudentMenuItem_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -311,6 +320,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripTextBox findRoomTextBox;
         private System.Windows.Forms.ToolStripMenuItem applicantsMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addStudentMenuItem;
     }
 }
 

@@ -61,11 +61,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataBase\HostelContext.cs" />
-    <Compile Include="Migrations\201706282026531_Start.cs" />
-    <Compile Include="Migrations\201706282026531_Start.Designer.cs">
-      <DependentUpon>201706282026531_Start.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Document\BaseDocument.cs" />
     <Compile Include="Model\Document\OtherDocument.cs" />
     <Compile Include="Model\Document\PromotionDocument.cs" />
@@ -88,9 +83,7 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201706282026531_Start.resx">
-      <DependentUpon>201706282026531_Start.cs</DependentUpon>
-    </EmbeddedResource>
+    <Folder Include="Migrations\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

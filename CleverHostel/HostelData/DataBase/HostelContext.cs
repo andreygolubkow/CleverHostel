@@ -25,6 +25,11 @@ namespace HostelData.DataBase
         public DbSet<BaseDocument> Documents { get; set; }
 
 
+
+        public HostelContext()
+            : base()
+        { }
+
         public HostelContext(string connectionString)
             :base(connectionString)
         { }

@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Diagnostics;
 using System.Linq;
 using System.Windows.Forms;
 
 using HostelData.DataBase;
+using HostelData.Model.Document;
 using HostelData.Model.Student;
 
 namespace ClHsWinFormsApp
@@ -24,6 +26,7 @@ namespace ClHsWinFormsApp
         {
             _hostelContext = new HostelContext(Properties.Settings.Default.ConnectionString);
             _hostelContext.Database.CreateIfNotExists();
+            
             studentBindingSource.DataSource = _hostelContext.Students.Include(s => s.Group).ToList();
             findStudentTextBox.AutoCompleteCustomSource.Clear();
             findStudentTextBox.AutoCompleteCustomSource.AddRange(_hostelContext.Students.Select(s => s.Name).ToArray());
@@ -127,13 +130,41 @@ namespace ClHsWinFormsApp
             _hostelContext.Applicants.Load();
             _hostelContext.Departments.Load();
             
-            var student = _hostelContext.Students.Include(s => s.Group)
+            Student student = _hostelContext.Students.Include(s => s.Group)
                     .Include(s => s.Documents)
                     .FirstOrDefault(s => s.Id == studentId);
             var cardForm = new StudentCardForm(student);
-            cardForm.ShowDialog();
+            if ( cardForm.ShowDialog() == DialogResult.OK )
+            {
+                if ( student?.Group != null )
+                {
+                    if ( _hostelContext.Groups.FirstOrDefault(g => g.Num == student.Group.Num) != null )
+                    {
+                        student.Group = _hostelContext.Groups.FirstOrDefault(g => g.Num == student.Group.Num);
+                    }
+                }
+                _hostelContext.SaveChanges();
+            }
 
         }
 
+        private void addStudentMenuItem_Click(object sender, EventArgs e)
+        {
+            var form = new StudentCardForm();
+            if ( form.ShowDialog() == DialogResult.OK )
+            {
+                var student = form.Student;
+                if (student?.Group != null)
+                {
+                    if (_hostelContext.Groups.FirstOrDefault(g => g.Num == student.Group.Num) != null)
+                    {
+                        student.Group = _hostelContext.Groups.FirstOrDefault(g => g.Num == student.Group.Num);
+                    }
+                }
+                student.Documents = new List<BaseDocument>();
+                _hostelContext.Students.Add(student);
+                _hostelContext.SaveChanges();
+            }
+        }
     }
 }

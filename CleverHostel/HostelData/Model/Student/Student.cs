@@ -77,6 +77,12 @@ namespace HostelData.Model.Student
         }
 
         /// <summary>
+        /// Проживает студент или нет.
+        /// </summary>
+        [DefaultValue(true)]
+        public bool Active { get; set; }
+
+        /// <summary>
         /// ФИО Студента.
         /// </summary>
         [Required]
