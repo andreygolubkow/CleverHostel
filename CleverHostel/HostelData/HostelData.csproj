@@ -61,7 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataBase\HostelContext.cs" />
-    <Compile Include="Model\Document\BaseDocument.cs" />
+    <Compile Include="Model\Document\Document.cs" />
     <Compile Include="Model\Document\OtherDocument.cs" />
     <Compile Include="Model\Document\PromotionDocument.cs" />
     <Compile Include="Model\Document\PunishmentDocument.cs" />

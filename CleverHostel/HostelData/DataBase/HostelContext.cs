@@ -22,7 +22,7 @@ namespace HostelData.DataBase
         
         public DbSet<Applicant> Applicants { get; set; }
 
-        public DbSet<BaseDocument> Documents { get; set; }
+        public DbSet<Document> Documents { get; set; }
 
 
 
@@ -33,6 +33,28 @@ namespace HostelData.DataBase
         public HostelContext(string connectionString)
             :base(connectionString)
         { }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+           /* modelBuilder.Entity<PromotionDocument>()
+                    .Map(m =>
+                    {
+                        m.MapInheritedProperties();
+                        m.ToTable("Promotions");
+                    });
+            modelBuilder.Entity<PunishmentDocument>().Map(m =>
+            {
+                m.MapInheritedProperties();
+                m.ToTable("Punishments");
+            });
+            modelBuilder.Entity<OtherDocument>()
+                    .Map(m =>
+                    {
+                        m.MapInheritedProperties();
+                        m.ToTable("OtherDocs");
+                    });
+            */
+        }
 
 
     }

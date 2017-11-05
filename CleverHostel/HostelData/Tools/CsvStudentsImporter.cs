@@ -54,7 +54,7 @@ namespace HostelData.Tools
                                           },
                                   Sex = line[3] == _female ? Sex.Female : Sex.Male,
                                   PhoneNumber = line[4],
-                                  Documents = new List<BaseDocument>()
+                                  Documents = new List<Document>()
                               };
                 list.Add(student);
             }

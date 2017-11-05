@@ -74,7 +74,7 @@
             // 
             // baseDocumentBindingSource
             // 
-            this.baseDocumentBindingSource.DataSource = typeof(HostelData.Model.Document.BaseDocument);
+            this.baseDocumentBindingSource.DataSource = typeof(HostelData.Model.Document.Document);
             // 
             // idDataGridViewTextBoxColumn
             // 

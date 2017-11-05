@@ -29,7 +29,15 @@ namespace ClHsWinFormsApp
 
             nameTextBox.Text = student.Name;
             phoneTextBox.Text = student.PhoneNumber;
-            sexComboBox.SelectedText = student.Sex == Sex.Male ? "М" : "Ж";
+            if ( student.Sex == Sex.Female )
+            {
+                fRadioButton.Checked = true;
+            }
+            else
+            {
+                mRadioButton.Checked = true;
+            }
+            
             if ( student.Group != null )
             {
                groupTextBox.Text = student.Group.Num; 
@@ -37,7 +45,8 @@ namespace ClHsWinFormsApp
             isActiveStudent.Checked = student.Active;
             roomTextBox.Text = student.Room.ToString();
             pointsLabel.Text = student.Points.ToString();
-            baseDocumentBindingSource.DataSource = student.Documents;
+
+            documentBindingSource.DataSource = student.Documents.ToList();
             _student = student;
         }
 
@@ -56,7 +65,7 @@ namespace ClHsWinFormsApp
             isActiveStudent.Checked = true;
             roomTextBox.Text = "";
             pointsLabel.Text =@"0";
-            baseDocumentBindingSource.DataSource = new List<BaseDocument>();
+            documentBindingSource.DataSource = new List<Document>();
             _student = new Student
                        {
                            Group = new Group()
@@ -69,7 +78,7 @@ namespace ClHsWinFormsApp
         {
             _student.Name = nameTextBox.Text;
             _student.PhoneNumber = phoneTextBox.Text;
-            _student.Sex = sexComboBox.SelectedText == "М" ? Sex.Male : Sex.Female;
+            _student.Sex = mRadioButton.Checked ? Sex.Male : Sex.Female;
             if ( _student?.Group.Num != groupTextBox.Text )
             {
                 _student.Group = new Group()
@@ -87,6 +96,25 @@ namespace ClHsWinFormsApp
         {
             DialogResult = DialogResult.Cancel;
             Close();
+        }
+
+        private void docementsGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var document = ((Document)documentBindingSource.Current);
+
+            if ( document is PromotionDocument p)
+            {
+                MessageBox.Show("Название:"+p.Name + "\nЗаявитель:"+p.Applicant+ "\tПодразделение:" + p.Applicant.Department+"\nКомментарий:" +p.Comments);
+                return;
+            }
+
+            if (document is PunishmentDocument ps)
+            {
+                MessageBox.Show("Вердикт:"+ps.Verdict+"\nЗаявитель"+ps.Applicant+"\tПодразделение:"+ps.Applicant.Department+"\nКомментарий:"+ps.Comments);
+                return;
+            }
+
+
         }
     }
 }

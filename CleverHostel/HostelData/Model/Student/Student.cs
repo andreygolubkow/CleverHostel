@@ -27,7 +27,7 @@ namespace HostelData.Model.Student
         private Sex _sex;
         private string _phoneNumber;
         private Group _group;
-        private ICollection<BaseDocument> _documents;
+        private ICollection<Document.Document> _documents;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -154,7 +154,7 @@ namespace HostelData.Model.Student
         /// <summary>
         /// Список документов для студента.
         /// </summary>
-        public virtual ICollection<BaseDocument> Documents
+        public virtual ICollection<Document.Document> Documents
         {
             get
             {

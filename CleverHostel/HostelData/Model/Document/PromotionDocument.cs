@@ -5,12 +5,14 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
+using HostelData.Model.Student;
+
 namespace HostelData.Model.Document
 {
     /// <summary>
     /// Поощрение за какое либой полезное действие, обычно начисляются баллы.
     /// </summary>
-    public class PromotionDocument : BaseDocument
+    public class PromotionDocument : Document
     {
 
         private int _points;
@@ -28,16 +30,16 @@ namespace HostelData.Model.Document
             set
             {
                 _name = value;
-                OnPropertyChanged(nameof(Name));
             }
         }
 
         #region Implementation of Base
 
-        /// <summary>
+        
+  /*      /// <summary>
         /// Очки начисляемые .
         /// </summary>
-        public override int Points
+        public new int Points
         {
             get => _points;
 
@@ -48,10 +50,9 @@ namespace HostelData.Model.Document
                     throw new ArgumentException("Нельзя присвоить отрицательные баллы. Воспользуйтесь другим документом.");
                 }
                 _points = value;
-                OnPropertyChanged(nameof(Points));
             }
         }
-
+        */
 
         #endregion
 

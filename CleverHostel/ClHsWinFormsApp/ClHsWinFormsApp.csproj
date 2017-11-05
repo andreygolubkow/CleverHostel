@@ -169,6 +169,7 @@
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\HostelData.Model.Document.BaseDocument.datasource" />
+    <None Include="Properties\DataSources\HostelData.Model.Document.Document.datasource" />
     <None Include="Properties\DataSources\HostelData.Model.Student.Applicant.datasource" />
     <None Include="Properties\DataSources\HostelData.Model.Student.Student.datasource" />
     <None Include="Properties\Settings.settings">

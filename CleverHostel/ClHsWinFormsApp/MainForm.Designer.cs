@@ -53,6 +53,7 @@
             this.documentsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pointsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.studentsSubmenu = new System.Windows.Forms.ToolStripMenuItem();
             this.addStudentMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mainMenu.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -79,7 +80,7 @@
             this.addDocumentMenuItem,
             this.toolStripSeparator1,
             this.applicantsMenuItem,
-            this.addStudentMenuItem});
+            this.studentsSubmenu});
             this.baseMenuItem.Name = "baseMenuItem";
             this.baseMenuItem.Size = new System.Drawing.Size(43, 23);
             this.baseMenuItem.Text = "База";
@@ -266,11 +267,19 @@
             // 
             this.studentBindingSource.DataSource = typeof(HostelData.Model.Student.Student);
             // 
+            // studentsSubmenu
+            // 
+            this.studentsSubmenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addStudentMenuItem});
+            this.studentsSubmenu.Name = "studentsSubmenu";
+            this.studentsSubmenu.Size = new System.Drawing.Size(181, 22);
+            this.studentsSubmenu.Text = "Студенты";
+            // 
             // addStudentMenuItem
             // 
             this.addStudentMenuItem.Name = "addStudentMenuItem";
-            this.addStudentMenuItem.Size = new System.Drawing.Size(181, 22);
-            this.addStudentMenuItem.Text = "Добавить студента";
+            this.addStudentMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.addStudentMenuItem.Text = "Добавить";
             this.addStudentMenuItem.Click += new System.EventHandler(this.addStudentMenuItem_Click);
             // 
             // MainForm
@@ -320,6 +329,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripTextBox findRoomTextBox;
         private System.Windows.Forms.ToolStripMenuItem applicantsMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem studentsSubmenu;
         private System.Windows.Forms.ToolStripMenuItem addStudentMenuItem;
     }
 }

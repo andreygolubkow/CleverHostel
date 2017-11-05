@@ -6,10 +6,11 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 using HostelData.Model.Enums;
+using HostelData.Model.Student;
 
 namespace HostelData.Model.Document
 {
-    public class PunishmentDocument : BaseDocument
+    public class PunishmentDocument : Document
     {
         private int _points ;
         private Verdict _verdict;
@@ -26,14 +27,13 @@ namespace HostelData.Model.Document
             set
             {
                 _verdict = value;
-                OnPropertyChanged(nameof(Verdict));
             }
         }
 
-        /// <summary>
+      /*  /// <summary>
         /// Очки снимаемые.
         /// </summary>
-        public override int Points
+        public new  int Points
         {
             get
             {
@@ -46,8 +46,9 @@ namespace HostelData.Model.Document
                     throw new ArgumentException("Ошибка в выставлении баллов. Нельзя использовать положительные баллы.");
                 }
                 _points = value;
-                OnPropertyChanged(nameof(Points));
             }
         }
+        */
+
     }
 }

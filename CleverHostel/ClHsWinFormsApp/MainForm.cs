@@ -76,6 +76,7 @@ namespace ClHsWinFormsApp
             {
                 _hostelContext.Documents.Add(promotionForm.PromotionDocument);
                 _hostelContext.SaveChanges();
+         
             }
         }
 
@@ -86,6 +87,7 @@ namespace ClHsWinFormsApp
             {
                 _hostelContext.Documents.Add(punishmentForm.PunishmentDocument);
                 _hostelContext.SaveChanges();
+                studentsGridView.Update();
             }
         }
 
@@ -161,9 +163,10 @@ namespace ClHsWinFormsApp
                         student.Group = _hostelContext.Groups.FirstOrDefault(g => g.Num == student.Group.Num);
                     }
                 }
-                student.Documents = new List<BaseDocument>();
+                student.Documents = new List<Document>();
                 _hostelContext.Students.Add(student);
                 _hostelContext.SaveChanges();
+                studentsGridView.Update();
             }
         }
     }

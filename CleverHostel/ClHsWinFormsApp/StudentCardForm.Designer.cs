@@ -31,10 +31,11 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StudentCardForm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.fRadioButton = new System.Windows.Forms.RadioButton();
+            this.mRadioButton = new System.Windows.Forms.RadioButton();
             this.label6 = new System.Windows.Forms.Label();
             this.groupTextBox = new System.Windows.Forms.TextBox();
-            this.sexComboBox = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.phoneTextBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.nameTextBox = new System.Windows.Forms.TextBox();
@@ -42,33 +43,34 @@
             this.numLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.isActiveStudent = new System.Windows.Forms.CheckBox();
             this.label10 = new System.Windows.Forms.Label();
             this.docementsGridView = new System.Windows.Forms.DataGridView();
+            this.commentsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.documentDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.applicantDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pointsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.documentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pointsLabel = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.roomTextBox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.saveButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
-            this.isActiveStudent = new System.Windows.Forms.CheckBox();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.commentsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.documentDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pointsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.applicantDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.baseDocumentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.docementsGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.baseDocumentBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.documentBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.fRadioButton);
+            this.groupBox1.Controls.Add(this.mRadioButton);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.groupTextBox);
-            this.groupBox1.Controls.Add(this.sexComboBox);
-            this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.phoneTextBox);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.nameTextBox);
@@ -81,6 +83,37 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Основная информация";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 89);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(27, 13);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "Пол";
+            // 
+            // fRadioButton
+            // 
+            this.fRadioButton.AutoSize = true;
+            this.fRadioButton.Location = new System.Drawing.Point(190, 87);
+            this.fRadioButton.Name = "fRadioButton";
+            this.fRadioButton.Size = new System.Drawing.Size(36, 17);
+            this.fRadioButton.TabIndex = 11;
+            this.fRadioButton.TabStop = true;
+            this.fRadioButton.Text = "Ж";
+            this.fRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // mRadioButton
+            // 
+            this.mRadioButton.AutoSize = true;
+            this.mRadioButton.Location = new System.Drawing.Point(115, 87);
+            this.mRadioButton.Name = "mRadioButton";
+            this.mRadioButton.Size = new System.Drawing.Size(34, 17);
+            this.mRadioButton.TabIndex = 10;
+            this.mRadioButton.TabStop = true;
+            this.mRadioButton.Text = "М";
+            this.mRadioButton.UseVisualStyleBackColor = true;
             // 
             // label6
             // 
@@ -99,26 +132,6 @@
             this.groupTextBox.Name = "groupTextBox";
             this.groupTextBox.Size = new System.Drawing.Size(169, 20);
             this.groupTextBox.TabIndex = 8;
-            // 
-            // sexComboBox
-            // 
-            this.sexComboBox.FormattingEnabled = true;
-            this.sexComboBox.Items.AddRange(new object[] {
-            "М",
-            "Ж"});
-            this.sexComboBox.Location = new System.Drawing.Point(105, 87);
-            this.sexComboBox.Name = "sexComboBox";
-            this.sexComboBox.Size = new System.Drawing.Size(169, 21);
-            this.sexComboBox.TabIndex = 7;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 90);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(27, 13);
-            this.label5.TabIndex = 6;
-            this.label5.Text = "Пол";
             // 
             // phoneTextBox
             // 
@@ -186,6 +199,16 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Проживание";
             // 
+            // isActiveStudent
+            // 
+            this.isActiveStudent.AutoSize = true;
+            this.isActiveStudent.Location = new System.Drawing.Point(372, 21);
+            this.isActiveStudent.Name = "isActiveStudent";
+            this.isActiveStudent.Size = new System.Drawing.Size(76, 17);
+            this.isActiveStudent.TabIndex = 4;
+            this.isActiveStudent.Text = "Активный";
+            this.isActiveStudent.UseVisualStyleBackColor = true;
+            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -199,21 +222,66 @@
             // 
             this.docementsGridView.AllowUserToAddRows = false;
             this.docementsGridView.AllowUserToDeleteRows = false;
+            this.docementsGridView.AllowUserToResizeRows = false;
             this.docementsGridView.AutoGenerateColumns = false;
+            this.docementsGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.docementsGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.docementsGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
             this.commentsDataGridViewTextBoxColumn,
             this.documentDateDataGridViewTextBoxColumn,
+            this.applicantDataGridViewTextBoxColumn,
             this.pointsDataGridViewTextBoxColumn,
-            this.applicantDataGridViewTextBoxColumn});
-            this.docementsGridView.DataSource = this.baseDocumentBindingSource;
+            this.idDataGridViewTextBoxColumn});
+            this.docementsGridView.DataSource = this.documentBindingSource;
             this.docementsGridView.Location = new System.Drawing.Point(9, 64);
             this.docementsGridView.Name = "docementsGridView";
             this.docementsGridView.ReadOnly = true;
             this.docementsGridView.RowHeadersVisible = false;
+            this.docementsGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.docementsGridView.Size = new System.Drawing.Size(461, 167);
             this.docementsGridView.TabIndex = 4;
+            this.docementsGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.docementsGridView_CellDoubleClick);
+            // 
+            // commentsDataGridViewTextBoxColumn
+            // 
+            this.commentsDataGridViewTextBoxColumn.DataPropertyName = "Comments";
+            this.commentsDataGridViewTextBoxColumn.FillWeight = 200F;
+            this.commentsDataGridViewTextBoxColumn.HeaderText = "Комментарий";
+            this.commentsDataGridViewTextBoxColumn.Name = "commentsDataGridViewTextBoxColumn";
+            this.commentsDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // documentDateDataGridViewTextBoxColumn
+            // 
+            this.documentDateDataGridViewTextBoxColumn.DataPropertyName = "DocumentDate";
+            this.documentDateDataGridViewTextBoxColumn.HeaderText = "Дата документа";
+            this.documentDateDataGridViewTextBoxColumn.Name = "documentDateDataGridViewTextBoxColumn";
+            this.documentDateDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // applicantDataGridViewTextBoxColumn
+            // 
+            this.applicantDataGridViewTextBoxColumn.DataPropertyName = "Applicant";
+            this.applicantDataGridViewTextBoxColumn.HeaderText = "Заявитель";
+            this.applicantDataGridViewTextBoxColumn.Name = "applicantDataGridViewTextBoxColumn";
+            this.applicantDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // pointsDataGridViewTextBoxColumn
+            // 
+            this.pointsDataGridViewTextBoxColumn.DataPropertyName = "Points";
+            this.pointsDataGridViewTextBoxColumn.HeaderText = "Баллы";
+            this.pointsDataGridViewTextBoxColumn.Name = "pointsDataGridViewTextBoxColumn";
+            this.pointsDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // documentBindingSource
+            // 
+            this.documentBindingSource.DataSource = typeof(HostelData.Model.Document.Document);
             // 
             // pointsLabel
             // 
@@ -269,57 +337,6 @@
             this.cancelButton.UseVisualStyleBackColor = true;
             this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
-            // isActiveStudent
-            // 
-            this.isActiveStudent.AutoSize = true;
-            this.isActiveStudent.Location = new System.Drawing.Point(372, 21);
-            this.isActiveStudent.Name = "isActiveStudent";
-            this.isActiveStudent.Size = new System.Drawing.Size(76, 17);
-            this.isActiveStudent.TabIndex = 4;
-            this.isActiveStudent.Text = "Активный";
-            this.isActiveStudent.UseVisualStyleBackColor = true;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // commentsDataGridViewTextBoxColumn
-            // 
-            this.commentsDataGridViewTextBoxColumn.DataPropertyName = "Comments";
-            this.commentsDataGridViewTextBoxColumn.HeaderText = "Комментарий";
-            this.commentsDataGridViewTextBoxColumn.Name = "commentsDataGridViewTextBoxColumn";
-            this.commentsDataGridViewTextBoxColumn.ReadOnly = true;
-            this.commentsDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // documentDateDataGridViewTextBoxColumn
-            // 
-            this.documentDateDataGridViewTextBoxColumn.DataPropertyName = "DocumentDate";
-            this.documentDateDataGridViewTextBoxColumn.HeaderText = "Дата документа";
-            this.documentDateDataGridViewTextBoxColumn.Name = "documentDateDataGridViewTextBoxColumn";
-            this.documentDateDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // pointsDataGridViewTextBoxColumn
-            // 
-            this.pointsDataGridViewTextBoxColumn.DataPropertyName = "Points";
-            this.pointsDataGridViewTextBoxColumn.HeaderText = "Баллы";
-            this.pointsDataGridViewTextBoxColumn.Name = "pointsDataGridViewTextBoxColumn";
-            this.pointsDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // applicantDataGridViewTextBoxColumn
-            // 
-            this.applicantDataGridViewTextBoxColumn.DataPropertyName = "Applicant";
-            this.applicantDataGridViewTextBoxColumn.HeaderText = "Заявитель";
-            this.applicantDataGridViewTextBoxColumn.Name = "applicantDataGridViewTextBoxColumn";
-            this.applicantDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // baseDocumentBindingSource
-            // 
-            this.baseDocumentBindingSource.DataSource = typeof(HostelData.Model.Document.BaseDocument);
-            // 
             // StudentCardForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -338,7 +355,7 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.docementsGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.baseDocumentBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.documentBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -352,8 +369,6 @@
         private System.Windows.Forms.TextBox nameTextBox;
         private System.Windows.Forms.TextBox phoneTextBox;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox sexComboBox;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox groupTextBox;
         private System.Windows.Forms.GroupBox groupBox2;
@@ -363,14 +378,17 @@
         private System.Windows.Forms.TextBox roomTextBox;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn commentsDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn documentDateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pointsDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn applicantDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource baseDocumentBindingSource;
         private System.Windows.Forms.CheckBox isActiveStudent;
         private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.Button cancelButton;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.RadioButton fRadioButton;
+        private System.Windows.Forms.RadioButton mRadioButton;
+        private System.Windows.Forms.DataGridViewTextBoxColumn commentsDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn documentDateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn applicantDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pointsDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource documentBindingSource;
     }
 }

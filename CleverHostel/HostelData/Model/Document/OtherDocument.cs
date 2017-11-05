@@ -5,29 +5,15 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
+using HostelData.Model.Student;
+
 namespace HostelData.Model.Document
 {
     /// <summary>
     /// Другой документ. Можно снимать баллы, и начислять баллы.
     /// </summary>
-    public class OtherDocument : BaseDocument
+    public class OtherDocument : Document
     {
-        private int _points;
 
-        #region Overrides of BaseDocument
-
-        /// <inheritdoc />
-        public override int Points
-        {
-            get => _points;
-
-            set
-            {
-                _points = value;
-                OnPropertyChanged(nameof(Points));
-            }
-        }
-
-        #endregion
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.CompilerServices;
 
 namespace ClHsWinFormsApp
 {
@@ -13,10 +14,12 @@ namespace ClHsWinFormsApp
         /// </summary>
         [STAThread]
         static void Main()
-        {                                       
-                Application.EnableVisualStyles();
-                Application.SetCompatibleTextRenderingDefault(false);
-                Application.Run(new MainForm());
+        {
+            RuntimeHelpers.PrepareConstrainedRegions();
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new MainForm());
+            
         }
     }
 }
