@@ -64,7 +64,11 @@ namespace ClHsWinFormsApp
 
         private void removeSelectedStudent_Click(object sender, EventArgs e)
         {
-            studentsGridViewBindingSource.RemoveCurrent();
+            if ( studentsGridViewBindingSource.Current != null )
+            {
+               studentsGridViewBindingSource.RemoveCurrent(); 
+            }
+            
         }
 
         private void addStudentBindingSource_CurrentChanged(object sender, EventArgs e)

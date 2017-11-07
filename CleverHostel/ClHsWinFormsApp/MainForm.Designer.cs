@@ -37,6 +37,8 @@
             this.addPunishmentMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.applicantsMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.studentsSubmenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.addStudentMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.serviceMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.importStudentsMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settingsMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -53,8 +55,6 @@
             this.documentsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pointsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.studentsSubmenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.addStudentMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mainMenu.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.studentsGridView)).BeginInit();
@@ -70,7 +70,7 @@
             this.findRoomTextBox});
             this.mainMenu.Location = new System.Drawing.Point(0, 0);
             this.mainMenu.Name = "mainMenu";
-            this.mainMenu.Size = new System.Drawing.Size(613, 27);
+            this.mainMenu.Size = new System.Drawing.Size(618, 27);
             this.mainMenu.TabIndex = 0;
             this.mainMenu.Text = "menuStrip1";
             // 
@@ -120,6 +120,21 @@
             this.applicantsMenuItem.Text = "Заявители";
             this.applicantsMenuItem.Click += new System.EventHandler(this.applicantsMenuItem_Click);
             // 
+            // studentsSubmenu
+            // 
+            this.studentsSubmenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addStudentMenuItem});
+            this.studentsSubmenu.Name = "studentsSubmenu";
+            this.studentsSubmenu.Size = new System.Drawing.Size(181, 22);
+            this.studentsSubmenu.Text = "Студенты";
+            // 
+            // addStudentMenuItem
+            // 
+            this.addStudentMenuItem.Name = "addStudentMenuItem";
+            this.addStudentMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.addStudentMenuItem.Text = "Добавить";
+            this.addStudentMenuItem.Click += new System.EventHandler(this.addStudentMenuItem_Click);
+            // 
             // serviceMenuItem
             // 
             this.serviceMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -168,7 +183,7 @@
             this.groupBox1.Controls.Add(this.studentsGridView);
             this.groupBox1.Location = new System.Drawing.Point(0, 27);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(601, 259);
+            this.groupBox1.Size = new System.Drawing.Size(606, 259);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "База данных";
@@ -183,6 +198,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.studentsGridView.AutoGenerateColumns = false;
+            this.studentsGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.studentsGridView.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
             this.studentsGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.studentsGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -200,7 +216,7 @@
             this.studentsGridView.ReadOnly = true;
             this.studentsGridView.RowHeadersVisible = false;
             this.studentsGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.studentsGridView.Size = new System.Drawing.Size(589, 234);
+            this.studentsGridView.Size = new System.Drawing.Size(594, 234);
             this.studentsGridView.TabIndex = 0;
             this.studentsGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.studentsGridView_CellContentClick);
             this.studentsGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.studentsGridView_CellDoubleClick);
@@ -267,26 +283,11 @@
             // 
             this.studentBindingSource.DataSource = typeof(HostelData.Model.Student.Student);
             // 
-            // studentsSubmenu
-            // 
-            this.studentsSubmenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addStudentMenuItem});
-            this.studentsSubmenu.Name = "studentsSubmenu";
-            this.studentsSubmenu.Size = new System.Drawing.Size(181, 22);
-            this.studentsSubmenu.Text = "Студенты";
-            // 
-            // addStudentMenuItem
-            // 
-            this.addStudentMenuItem.Name = "addStudentMenuItem";
-            this.addStudentMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.addStudentMenuItem.Text = "Добавить";
-            this.addStudentMenuItem.Click += new System.EventHandler(this.addStudentMenuItem_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(613, 298);
+            this.ClientSize = new System.Drawing.Size(618, 298);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.mainMenu);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

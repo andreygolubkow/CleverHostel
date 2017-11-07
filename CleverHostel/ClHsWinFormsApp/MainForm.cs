@@ -20,6 +20,8 @@ namespace ClHsWinFormsApp
             InitializeComponent();
             
             LoadData();
+			
+
         }
 
         private void LoadData()
@@ -76,7 +78,7 @@ namespace ClHsWinFormsApp
             {
                 _hostelContext.Documents.Add(promotionForm.PromotionDocument);
                 _hostelContext.SaveChanges();
-         
+                studentBindingSource.ResetBindings(false);
             }
         }
 
@@ -88,6 +90,7 @@ namespace ClHsWinFormsApp
                 _hostelContext.Documents.Add(punishmentForm.PunishmentDocument);
                 _hostelContext.SaveChanges();
                 studentsGridView.Update();
+                studentBindingSource.ResetBindings(false);
             }
         }
 
@@ -166,7 +169,7 @@ namespace ClHsWinFormsApp
                 student.Documents = new List<Document>();
                 _hostelContext.Students.Add(student);
                 _hostelContext.SaveChanges();
-                studentsGridView.Update();
+                studentBindingSource.ResetBindings(false);
             }
         }
     }
