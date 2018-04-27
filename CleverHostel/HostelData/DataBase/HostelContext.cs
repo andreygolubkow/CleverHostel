@@ -1,11 +1,8 @@
 ﻿// //CleverHostel->HostelData->HostelContext.cs
 // //andreygolubkow Андрей Голубков
 
-using System.ComponentModel;
 using System.Data.Entity;
-using System.Runtime.CompilerServices;
 
-using HostelData.Annotations;
 using HostelData.Model.Document;
 using HostelData.Model.Student;
 

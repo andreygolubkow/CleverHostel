@@ -1,0 +1,51 @@
+﻿<Window x:Class="ArrearsChecker.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ArrearsChecker"
+        xmlns:Editors="https://github.com/iXab3r/WpfAutoCompleteControls"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <DockPanel  x:Name="MainDockPanel" LastChildFill="True">
+        <GroupBox DockPanel.Dock="Top"
+                  x:Name="StudentSelectorGroupBox"
+                  Padding="10"
+                  Header="Выбор студента">
+            <Editors:AutoCompleteTextBox 
+                Height="30" 
+                HorizontalContentAlignment="Stretch"
+                FontSize="15"
+                x:Name="StudentComboBox"
+                Watermark="Начните писать ФИО"
+                ItemTemplate="{StaticResource StudentCardTemplate}"
+                Text="{Binding Path=SelectedText, Mode = TwoWay}"
+                DisplayMemberPath="Name" HorizontalAlignment="Left" Margin="10,0,0,0" Width="463">
+                <Editors:AutoCompleteTextBox.Provider>
+                    <local:MainVM/>
+                </Editors:AutoCompleteTextBox.Provider>
+            </Editors:AutoCompleteTextBox>
+        </GroupBox>
+        <GroupBox x:Name="StudentGridViewGroupBox"
+                  Padding="10"
+                  Header="Список студентов">
+            <DataGrid AutoGenerateColumns="False" 
+                      x:Name="studentsGridView" 
+                      CanUserResizeRows="False" 
+                      ColumnWidth="Auto"
+                      CanUserAddRows="False"
+                      CanUserDeleteRows="False"
+                      ItemsSource="{Binding Path=Students}" 
+                      SelectedItem="{Binding Path = SelectedStudent, Mode = TwoWay}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding Path=Name, Mode = OneWay}" Header="ФИО"/>
+                    <DataGridTextColumn Binding="{Binding Path=Room, Mode = OneWay}" Header="Комната" />
+                    <DataGridTextColumn Binding="{Binding Path=Group, Mode = OneWay}" Header="Группа"/>
+                    <DataGridTextColumn Binding="{Binding Path=Arrear, Mode = OneWay}" Header="Долг"/>
+                    <DataGridTextColumn Binding="{Binding Path=IsPayed, Mode = OneWay}" Header="Оплачено"/>
+                    <DataGridTextColumn Binding="{Binding Path=Notes, Mode = OneWay}" Header="Примечания"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </GroupBox>
+    </DockPanel>
+</Window>
