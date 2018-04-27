@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ArrearsChecker"
         xmlns:Editors="https://github.com/iXab3r/WpfAutoCompleteControls"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="Задолженность" Height="350" Width="525">
     <DockPanel  x:Name="MainDockPanel" LastChildFill="True">
         <GroupBox DockPanel.Dock="Top"
                   x:Name="StudentSelectorGroupBox"

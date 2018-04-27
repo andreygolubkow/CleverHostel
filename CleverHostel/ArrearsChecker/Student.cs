@@ -17,10 +17,10 @@ namespace ArrearsChecker
 
         public bool Active { get; set; }
 
-        public List<DateTime> PayDays = new List<DateTime>();
+        public DateTime? PayDay = null;
 
         public string Notes { get; set; }
 
-        public bool IsPayed => PayDays!=null && PayDays.Count > 0;
+        public bool IsPayed => PayDay != null;
     }
 }
