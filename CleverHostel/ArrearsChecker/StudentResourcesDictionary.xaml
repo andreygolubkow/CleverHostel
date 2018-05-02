@@ -22,6 +22,7 @@
                         <TextBlock Text="  "/>
                         <TextBlock Text="Оплачено:"/>
                         <TextBlock Text="{Binding Path=IsPayed}"/>
+                        <TextBlock Text="{Binding Path=Notes}"/>
                 </TextBlock>
                 <TextBlock />
             </StackPanel>

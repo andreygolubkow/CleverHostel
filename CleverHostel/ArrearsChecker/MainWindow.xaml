@@ -20,7 +20,7 @@
                 Watermark="Начните писать ФИО"
                 ItemTemplate="{StaticResource StudentCardTemplate}"
                 Text="{Binding Path=SelectedText, Mode = TwoWay}"
-                DisplayMemberPath="Name" HorizontalAlignment="Left" Margin="10,0,0,0" Width="463">
+                DisplayMemberPath="Name" HorizontalAlignment="Left" Margin="10,0,0,0" Width="463" KeyUp="StudentComboBox_KeyUp" TextInput="StudentComboBox_TextInput">
                 <Editors:AutoCompleteTextBox.Provider>
                     <local:MainVM/>
                 </Editors:AutoCompleteTextBox.Provider>

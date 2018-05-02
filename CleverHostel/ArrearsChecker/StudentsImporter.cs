@@ -35,7 +35,7 @@ namespace ArrearsChecker
                     student.PayDay = new DateTime(yyyy,mm,dd);
                 }
 
-                student.Notes = line[6];
+                student.Notes = line[8];
                 students.Add(student);
             }
 

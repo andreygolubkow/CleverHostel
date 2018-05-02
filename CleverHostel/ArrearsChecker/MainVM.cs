@@ -47,7 +47,7 @@ namespace ArrearsChecker
         /// <inheritdoc />
         public IEnumerable GetSuggestions(string filter)
         {
-            return _students.Where(s => s.Name.ToLower().Contains(filter.ToLower()));
+            return _students.Where(s => s.Name.ToLower().Contains(filter.ToLower().TryCorrectEn()));
         }
 
         #endregion

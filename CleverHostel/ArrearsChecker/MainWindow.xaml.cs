@@ -25,5 +25,15 @@ namespace ArrearsChecker
             InitializeComponent();
             DataContext = new MainVM();
         }
+
+        private void StudentComboBox_KeyUp(object sender, KeyEventArgs e)
+        {
+            
+        }
+
+        private void StudentComboBox_TextInput(object sender, TextCompositionEventArgs e)
+        {
+            
+        }
     }
 }
