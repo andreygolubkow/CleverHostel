@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
 
+using Newtonsoft.Json;
 
 namespace ArrearsChecker
 {
@@ -26,7 +27,7 @@ namespace ArrearsChecker
                 student.Room = line[1];
                 student.Arrear = Convert.ToDouble(line[2]);
                 student.Group = line[3];
-                student.Active = line[4].ToLower() == "активный";
+                student.Active = line[4];
                 if ( line[5].Length > 0 )
                 {
                     var dd = Convert.ToInt32(line[5].Split('.')[0]);
@@ -39,6 +40,12 @@ namespace ArrearsChecker
                 students.Add(student);
             }
 
+            string json = JsonConvert.SerializeObject(students);
+            using (var writer = new StreamWriter("students.json",false))
+            {
+                writer.Write(json);
+            }
+            
             return students;
         }
 

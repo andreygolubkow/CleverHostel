@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClHsWinFormsApp", "ClHsWinF
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArrearsChecker", "ArrearsChecker\ArrearsChecker.csproj", "{29A58EF9-0657-4DE0-BDC0-57E0C3963D09}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArrearsCollector", "ArrearsCollector\ArrearsCollector.csproj", "{04A9E9A9-1BDF-4E71-85F7-7398633E0ACB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{29A58EF9-0657-4DE0-BDC0-57E0C3963D09}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{29A58EF9-0657-4DE0-BDC0-57E0C3963D09}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{29A58EF9-0657-4DE0-BDC0-57E0C3963D09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04A9E9A9-1BDF-4E71-85F7-7398633E0ACB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04A9E9A9-1BDF-4E71-85F7-7398633E0ACB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04A9E9A9-1BDF-4E71-85F7-7398633E0ACB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04A9E9A9-1BDF-4E71-85F7-7398633E0ACB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

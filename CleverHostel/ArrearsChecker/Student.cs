@@ -15,7 +15,9 @@ namespace ArrearsChecker
 
         public string Group { get; set; }
 
-        public bool Active { get; set; }
+        public String Active { get; set; }
+
+        public String EducationForm { get; set; }
 
         public DateTime? PayDay = null;
 
